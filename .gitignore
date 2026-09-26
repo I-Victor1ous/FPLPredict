@@ -1,3 +1,15 @@
-# Ignore config files
-
 config.json
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+logs/
+headless_dom.html
+downloaded_files/
+
+# Optional: keep CSVs in git; ignore large scratch files
+new.csv
+check
