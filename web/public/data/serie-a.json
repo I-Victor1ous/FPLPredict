@@ -1,0 +1,207 @@
+{
+  "generatedAt": "2026-09-28T04:51:14.113649+00:00",
+  "league": "Serie A",
+  "upcoming": [
+    {
+      "date": "2026-10-10",
+      "team": "Fiorentina",
+      "opponent": "Genoa",
+      "pred": "Win",
+      "pickLabel": "Fiorentina to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 17,
+      "oppPosition": 19,
+      "probs": {
+        "teamWin": 47.55,
+        "draw": 28.48,
+        "oppWin": 23.97
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-10",
+      "team": "Napoli",
+      "opponent": "Frosinone",
+      "pred": "Win",
+      "pickLabel": "Napoli to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 9,
+      "oppPosition": 6,
+      "probs": {
+        "teamWin": 55.0,
+        "draw": 30.06,
+        "oppWin": 14.94
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-10",
+      "team": "Parma",
+      "opponent": "Inter",
+      "pred": "Loss",
+      "pickLabel": "Inter to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 15,
+      "oppPosition": 2,
+      "probs": {
+        "teamWin": 6.97,
+        "draw": 16.34,
+        "oppWin": 76.7
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Lazio",
+      "opponent": "Monza",
+      "pred": "Win",
+      "pickLabel": "Lazio to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 3,
+      "oppPosition": 16,
+      "probs": {
+        "teamWin": 63.72,
+        "draw": 27.79,
+        "oppWin": 8.49
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Bologna",
+      "opponent": "Lecce",
+      "pred": "Win",
+      "pickLabel": "Bologna to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 18,
+      "oppPosition": 12,
+      "probs": {
+        "teamWin": 41.51,
+        "draw": 35.76,
+        "oppWin": 22.73
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Sassuolo",
+      "opponent": "Milan",
+      "pred": "Loss",
+      "pickLabel": "Milan to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 10,
+      "oppPosition": 5,
+      "probs": {
+        "teamWin": 16.36,
+        "draw": 20.09,
+        "oppWin": 63.56
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Cagliari",
+      "opponent": "Juventus",
+      "pred": "Loss",
+      "pickLabel": "Juventus to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 4,
+      "oppPosition": 7,
+      "probs": {
+        "teamWin": 23.47,
+        "draw": 22.55,
+        "oppWin": 53.98
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Como",
+      "opponent": "Roma",
+      "pred": "Loss",
+      "pickLabel": "Roma to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 8,
+      "oppPosition": 1,
+      "probs": {
+        "teamWin": 29.09,
+        "draw": 30.1,
+        "oppWin": 40.81
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-12",
+      "team": "Atalanta",
+      "opponent": "Venezia",
+      "pred": "Win",
+      "pickLabel": "Atalanta to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 11,
+      "oppPosition": 20,
+      "probs": {
+        "teamWin": 62.81,
+        "draw": 27.94,
+        "oppWin": 9.25
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-12",
+      "team": "Torino",
+      "opponent": "Udinese",
+      "pred": "Win",
+      "pickLabel": "Torino to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 14,
+      "oppPosition": 13,
+      "probs": {
+        "teamWin": 34.41,
+        "draw": 34.15,
+        "oppWin": 31.44
+      },
+      "correct": null
+    }
+  ],
+  "history": [],
+  "metrics": null,
+  "meta": {
+    "upcomingCount": 10,
+    "historyCount": 0,
+    "recentPreviewSize": 10,
+    "historyPageSize": 20,
+    "selectedModel": "stacking_lr_meta_oof",
+    "modelLabel": "Stacking ensemble",
+    "modelEvaluatedAt": "2026-09-28T02:02:29.716481+00:00",
+    "modelReselectDays": 30,
+    "modelTestAccuracy": 0.64,
+    "modelSplit": {
+      "data_seasons": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "train_seasons": [
+        2023,
+        2024,
+        2025
+      ],
+      "val_season": 2026,
+      "test_season": 2027
+    },
+    "pipelineNote": "Weekly scrape and predict; model strategy re-evaluated about every 30 days on a scheduled run.",
+    "positionsNote": "Table positions are computed from scraped match results in matches.csv. Run the weekly scrape to refresh; missing # means the team is not in the simulated table yet (often a naming or incomplete data issue)."
+  }
+}

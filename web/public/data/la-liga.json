@@ -1,0 +1,207 @@
+{
+  "generatedAt": "2026-09-28T04:50:36.705385+00:00",
+  "league": "La Liga",
+  "upcoming": [
+    {
+      "date": "2026-10-09",
+      "team": "M\u00e1laga",
+      "opponent": "Espanyol",
+      "pred": "Draw",
+      "pickLabel": "Draw",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 20,
+      "oppPosition": 15,
+      "probs": {
+        "teamWin": 10.74,
+        "draw": 62.79,
+        "oppWin": 26.47
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-10",
+      "team": "Athletic Club",
+      "opponent": "Rayo Vallecano",
+      "pred": "Win",
+      "pickLabel": "Athletic Club to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 10,
+      "oppPosition": 12,
+      "probs": {
+        "teamWin": 70.45,
+        "draw": 16.5,
+        "oppWin": 13.05
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-10",
+      "team": "Real Madrid",
+      "opponent": "Villarreal",
+      "pred": "Win",
+      "pickLabel": "Real Madrid to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 4,
+      "oppPosition": 9,
+      "probs": {
+        "teamWin": 49.72,
+        "draw": 46.3,
+        "oppWin": 3.98
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-10",
+      "team": "Getafe",
+      "opponent": "Barcelona",
+      "pred": "Loss",
+      "pickLabel": "Barcelona to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 11,
+      "oppPosition": 1,
+      "probs": {
+        "teamWin": 2.57,
+        "draw": 3.9,
+        "oppWin": 93.53
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-10",
+      "team": "Atl\u00e9tico Madrid",
+      "opponent": "Alav\u00e9s",
+      "pred": "Draw",
+      "pickLabel": "Draw",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 2,
+      "oppPosition": 6,
+      "probs": {
+        "teamWin": 37.19,
+        "draw": 49.89,
+        "oppWin": 12.92
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Real Betis",
+      "opponent": "Osasuna",
+      "pred": "Draw",
+      "pickLabel": "Draw",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 3,
+      "oppPosition": 13,
+      "probs": {
+        "teamWin": 39.43,
+        "draw": 51.4,
+        "oppWin": 9.17
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Elche",
+      "opponent": "Celta Vigo",
+      "pred": "Loss",
+      "pickLabel": "Celta Vigo to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 18,
+      "oppPosition": 14,
+      "probs": {
+        "teamWin": 4.34,
+        "draw": 25.48,
+        "oppWin": 70.18
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Dep. A Coru\u00f1a",
+      "opponent": "Real Sociedad",
+      "pred": "Win",
+      "pickLabel": "Dep. A Coru\u00f1a to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 7,
+      "oppPosition": 8,
+      "probs": {
+        "teamWin": 46.32,
+        "draw": 41.13,
+        "oppWin": 12.55
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Valencia",
+      "opponent": "Racing Sant",
+      "pred": "Loss",
+      "pickLabel": "Racing Sant to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 19,
+      "oppPosition": 16,
+      "probs": {
+        "teamWin": 11.92,
+        "draw": 11.72,
+        "oppWin": 76.37
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-12",
+      "team": "Levante",
+      "opponent": "Sevilla",
+      "pred": "Win",
+      "pickLabel": "Levante to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 17,
+      "oppPosition": 5,
+      "probs": {
+        "teamWin": 64.91,
+        "draw": 11.05,
+        "oppWin": 24.04
+      },
+      "correct": null
+    }
+  ],
+  "history": [],
+  "metrics": null,
+  "meta": {
+    "upcomingCount": 10,
+    "historyCount": 0,
+    "recentPreviewSize": 10,
+    "historyPageSize": 20,
+    "selectedModel": "xgb",
+    "modelLabel": "XGBoost",
+    "modelEvaluatedAt": "2026-09-27T08:09:51.903710+00:00",
+    "modelReselectDays": 30,
+    "modelTestAccuracy": 0.4927536231884058,
+    "modelSplit": {
+      "data_seasons": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "train_seasons": [
+        2023,
+        2024,
+        2025
+      ],
+      "val_season": 2026,
+      "test_season": 2027
+    },
+    "pipelineNote": "Weekly scrape and predict; model strategy re-evaluated about every 30 days on a scheduled run.",
+    "positionsNote": "Table positions are computed from scraped match results in matches.csv. Run the weekly scrape to refresh; missing # means the team is not in the simulated table yet (often a naming or incomplete data issue)."
+  }
+}

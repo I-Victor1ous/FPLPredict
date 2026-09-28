@@ -6,7 +6,8 @@ import numpy as np
 import pandas as pd
 from scipy.stats import poisson
 
-from fplpredict.config import LEAGUE
+from fplpredict.config import LEAGUE as DEFAULT_LEAGUE
+from fplpredict.predictions_util import drop_invalid_fixtures
 from fplpredict.teams import TEAM_ALIASES, normalize_team_name
 
 
@@ -15,20 +16,22 @@ class MissingDict(dict):
         return key
 
 
-def build_team_name_mapping(matches: pd.DataFrame) -> MissingDict:
-    league = matches[matches["Comp"] == LEAGUE]
-    team_names = sorted(league["Team"].unique())
-    opp_names = sorted(league["Opponent"].unique())
-    exclusive_team = [name for name in team_names if name not in opp_names]
-    exclusive_opp = [name for name in opp_names if name not in team_names]
-    mapping = dict(TEAM_ALIASES)
-    for team_name, opp_name in zip(exclusive_team, exclusive_opp):
-        canonical_team = normalize_team_name(team_name) or team_name
-        canonical_opp = normalize_team_name(opp_name) or opp_name
-        mapping[team_name] = canonical_opp
-        if canonical_team != team_name:
-            mapping[canonical_team] = canonical_opp
-    return MissingDict(**mapping)
+def _round_sort_key(rnd) -> tuple[int, int | str]:
+    """Order gameweeks numerically; playoff / tie-break labels sort after matchweeks."""
+    if rnd is None or (isinstance(rnd, float) and pd.isna(rnd)):
+        return (1, 9999)
+    text = str(rnd).strip()
+    match = re.search(r"(\d+)\s*$", text)
+    if match:
+        return (0, int(match.group(1)))
+    return (1, text.lower())
+
+
+def build_team_name_mapping(
+    matches: pd.DataFrame, league: str = DEFAULT_LEAGUE
+) -> MissingDict:
+    """Explicit aliases only — do not guess mappings from asymmetric name lists."""
+    return MissingDict(**TEAM_ALIASES)
 
 
 def get_target_from_goals(row: pd.Series) -> int:
@@ -91,13 +94,16 @@ def get_relative_feature(team_matches: pd.DataFrame, cols: list[str]) -> list[st
 
 
 def prepare_raw_frames(
-    matches: pd.DataFrame, next_matches: pd.DataFrame, history_matches: pd.DataFrame
+    matches: pd.DataFrame,
+    next_matches: pd.DataFrame,
+    history_matches: pd.DataFrame,
+    league: str = DEFAULT_LEAGUE,
 ):
-    mapping = build_team_name_mapping(matches)
+    mapping = build_team_name_mapping(matches, league=league)
 
-    matches = matches.copy()
-    next_matches = next_matches.copy()
-    history_matches = history_matches.copy()
+    matches = matches[matches["Comp"] == league].copy()
+    next_matches = next_matches[next_matches["Comp"] == league].copy()
+    history_matches = history_matches[history_matches["Comp"] == league].copy()
 
     matches["Team"] = matches["Team"].map(mapping).apply(
         lambda x: normalize_team_name(x) or x
@@ -148,6 +154,8 @@ def prepare_raw_frames(
     next_matches["Opponent"] = next_matches["Opponent"].apply(
         lambda x: normalize_team_name(x) or x
     )
+    matches = drop_invalid_fixtures(matches)
+    next_matches = drop_invalid_fixtures(next_matches)
     next_matches["Team_code"] = next_matches["Team"].map(team_mapping_dict)
     next_matches["Opp_code"] = next_matches["Opponent"].map(team_mapping_dict)
     next_matches["Date"] = pd.to_datetime(next_matches["Date"])
@@ -246,9 +254,10 @@ def build_feature_matrix(
     matches: pd.DataFrame,
     next_matches: pd.DataFrame,
     history_matches: pd.DataFrame,
+    league: str = DEFAULT_LEAGUE,
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
     matches, next_matches, history_matches, team_mapping_dict = prepare_raw_frames(
-        matches, next_matches, history_matches
+        matches, next_matches, history_matches, league=league
     )
 
     league_ravg_cols = [
@@ -295,7 +304,7 @@ def build_feature_matrix(
         .reset_index(drop=True)
     )
 
-    league_matches = all_matches[all_matches["Comp"] == LEAGUE]
+    league_matches = all_matches[all_matches["Comp"] == league]
     team_league_matches = (
         league_matches.groupby("Team", group_keys=True)
         .apply(
@@ -412,12 +421,9 @@ def build_feature_matrix(
     team_matches = team_matches.merge(
         team_hth_matches[hth_merge], on=["Date", "Team"], how="left"
     )
-    team_matches = team_matches[team_matches["Comp"] == LEAGUE].copy()
+    team_matches = team_matches[team_matches["Comp"] == league].copy()
 
-    sorted_round = sorted(
-        team_matches["Round"].unique(),
-        key=lambda rnd: int(re.search(r"[0-9]+$", rnd).group(0)),
-    )
+    sorted_round = sorted(team_matches["Round"].unique(), key=_round_sort_key)
     round_mapping = {value: key for key, value in enumerate(sorted_round, start=1)}
     team_matches["Round"] = team_matches["Round"].map(round_mapping)
     team_matches = team_matches.sort_values("Date").reset_index(drop=True)
@@ -598,6 +604,22 @@ def build_feature_matrix(
     team_matches = team_matches.drop_duplicates(subset=["Match_key", "Date"])
     team_matches = team_matches.drop(columns=["Match_key"], errors="ignore")
 
+    team_matches = drop_invalid_fixtures(team_matches)
+
     future_matches = team_matches[team_matches["Target"].isna()].copy()
     past_matches = team_matches[team_matches["Target"].notna()].copy()
+
+    if not future_matches.empty:
+        future_matches["_fixture_key"] = future_matches.apply(
+            lambda row: tuple(
+                sorted([str(row["Team"]), str(row["Opponent"])])
+            )
+            + (row["Date"].date().isoformat(),),
+            axis=1,
+        )
+        future_matches = future_matches.sort_values("Date")
+        future_matches = future_matches.drop_duplicates(
+            subset=["_fixture_key"], keep="first"
+        ).drop(columns=["_fixture_key"])
+
     return past_matches, future_matches, team_mapping_dict

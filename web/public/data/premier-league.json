@@ -1,7 +1,24 @@
 {
-  "generatedAt": "2026-09-25T12:42:51.682429+00:00",
+  "generatedAt": "2026-09-28T04:50:14.212276+00:00",
   "league": "Premier League",
   "upcoming": [
+    {
+      "date": "2026-10-10",
+      "team": "Fulham",
+      "opponent": "Ipswich Town",
+      "pred": "Win",
+      "pickLabel": "Fulham to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 19,
+      "oppPosition": 11,
+      "probs": {
+        "teamWin": 56.63,
+        "draw": 24.94,
+        "oppWin": 18.42
+      },
+      "correct": null
+    },
     {
       "date": "2026-10-10",
       "team": "Arsenal",
@@ -21,35 +38,18 @@
     },
     {
       "date": "2026-10-10",
-      "team": "Tottenham Hotspur",
-      "opponent": "Manchester United",
-      "pred": "Loss",
-      "pickLabel": "Manchester United to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 20,
-      "oppPosition": 12,
-      "probs": {
-        "teamWin": 18.21,
-        "draw": 30.69,
-        "oppWin": 51.1
-      },
-      "correct": null
-    },
-    {
-      "date": "2026-10-10",
-      "team": "Fulham",
-      "opponent": "Ipswich Town",
+      "team": "Brighton and Hove Albion",
+      "opponent": "Sunderland",
       "pred": "Win",
-      "pickLabel": "Fulham to win",
+      "pickLabel": "Brighton and Hove Albion to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 19,
-      "oppPosition": 11,
+      "teamPosition": 3,
+      "oppPosition": 14,
       "probs": {
-        "teamWin": 56.63,
-        "draw": 24.94,
-        "oppWin": 18.42
+        "teamWin": 54.25,
+        "draw": 21.74,
+        "oppWin": 24.01
       },
       "correct": null
     },
@@ -72,18 +72,18 @@
     },
     {
       "date": "2026-10-10",
-      "team": "Sunderland",
-      "opponent": "Brighton and Hove Albion",
-      "pred": "Draw",
-      "pickLabel": "Draw",
+      "team": "Tottenham Hotspur",
+      "opponent": "Manchester United",
+      "pred": "Loss",
+      "pickLabel": "Manchester United to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 14,
-      "oppPosition": 3,
+      "teamPosition": 20,
+      "oppPosition": 12,
       "probs": {
-        "teamWin": 26.83,
-        "draw": 41.12,
-        "oppWin": 32.04
+        "teamWin": 18.21,
+        "draw": 30.69,
+        "oppWin": 51.1
       },
       "correct": null
     },
@@ -106,18 +106,18 @@
     },
     {
       "date": "2026-10-11",
-      "team": "Nottingham Forest",
-      "opponent": "Crystal Palace",
-      "pred": "Draw",
-      "pickLabel": "Draw",
+      "team": "Liverpool",
+      "opponent": "Manchester City",
+      "pred": "Win",
+      "pickLabel": "Liverpool to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 13,
-      "oppPosition": 15,
+      "teamPosition": 6,
+      "oppPosition": 1,
       "probs": {
-        "teamWin": 22.54,
-        "draw": 46.97,
-        "oppWin": 30.49
+        "teamWin": 51.49,
+        "draw": 28.71,
+        "oppWin": 19.81
       },
       "correct": null
     },
@@ -140,18 +140,18 @@
     },
     {
       "date": "2026-10-11",
-      "team": "Liverpool",
-      "opponent": "Manchester City",
-      "pred": "Win",
-      "pickLabel": "Liverpool to win",
+      "team": "Nottingham Forest",
+      "opponent": "Crystal Palace",
+      "pred": "Draw",
+      "pickLabel": "Draw",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 6,
-      "oppPosition": 1,
+      "teamPosition": 13,
+      "oppPosition": 15,
       "probs": {
-        "teamWin": 51.49,
-        "draw": 28.71,
-        "oppWin": 19.81
+        "teamWin": 22.54,
+        "draw": 46.97,
+        "oppWin": 30.49
       },
       "correct": null
     },
@@ -210,23 +210,6 @@
     },
     {
       "date": "2026-02-08",
-      "team": "Brighton and Hove Albion",
-      "opponent": "Crystal Palace",
-      "pred": "Draw",
-      "pickLabel": "Draw",
-      "actual": "Loss",
-      "actualLabel": "Crystal Palace to win",
-      "teamPosition": 15,
-      "oppPosition": 17,
-      "probs": {
-        "teamWin": 34.73,
-        "draw": 42.29,
-        "oppWin": 22.98
-      },
-      "correct": false
-    },
-    {
-      "date": "2026-02-08",
       "team": "Liverpool",
       "opponent": "Manchester City",
       "pred": "Draw",
@@ -243,38 +226,21 @@
       "correct": false
     },
     {
-      "date": "2026-02-07",
-      "team": "Fulham",
-      "opponent": "Everton",
+      "date": "2026-02-08",
+      "team": "Brighton and Hove Albion",
+      "opponent": "Crystal Palace",
       "pred": "Draw",
       "pickLabel": "Draw",
       "actual": "Loss",
-      "actualLabel": "Everton to win",
-      "teamPosition": 8,
-      "oppPosition": 14,
+      "actualLabel": "Crystal Palace to win",
+      "teamPosition": 15,
+      "oppPosition": 17,
       "probs": {
-        "teamWin": 23.7,
-        "draw": 54.81,
-        "oppWin": 21.49
+        "teamWin": 34.73,
+        "draw": 42.29,
+        "oppWin": 22.98
       },
       "correct": false
-    },
-    {
-      "date": "2026-02-07",
-      "team": "Manchester United",
-      "opponent": "Tottenham Hotspur",
-      "pred": "Win",
-      "pickLabel": "Manchester United to win",
-      "actual": "Win",
-      "actualLabel": "Manchester United to win",
-      "teamPosition": 13,
-      "oppPosition": 2,
-      "probs": {
-        "teamWin": 42.27,
-        "draw": 36.5,
-        "oppWin": 21.24
-      },
-      "correct": true
     },
     {
       "date": "2026-02-07",
@@ -295,18 +261,18 @@
     },
     {
       "date": "2026-02-07",
-      "team": "Sunderland",
-      "opponent": "Arsenal",
-      "pred": "Loss",
-      "pickLabel": "Arsenal to win",
-      "actual": "Loss",
-      "actualLabel": "Arsenal to win",
-      "teamPosition": 4,
-      "oppPosition": 3,
+      "team": "Bournemouth",
+      "opponent": "Aston Villa",
+      "pred": "Draw",
+      "pickLabel": "Draw",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 16,
+      "oppPosition": 12,
       "probs": {
-        "teamWin": 23.11,
-        "draw": 33.46,
-        "oppWin": 43.43
+        "teamWin": 23.51,
+        "draw": 42.65,
+        "oppWin": 33.84
       },
       "correct": true
     },
@@ -329,20 +295,71 @@
     },
     {
       "date": "2026-02-07",
-      "team": "Bournemouth",
-      "opponent": "Aston Villa",
+      "team": "West Ham United",
+      "opponent": "Burnley",
       "pred": "Draw",
       "pickLabel": "Draw",
-      "actual": "Draw",
-      "actualLabel": "Draw",
-      "teamPosition": 16,
-      "oppPosition": 12,
+      "actual": "Win",
+      "actualLabel": "West Ham United to win",
+      "teamPosition": 6,
+      "oppPosition": 19,
       "probs": {
-        "teamWin": 23.51,
-        "draw": 42.65,
-        "oppWin": 33.84
+        "teamWin": 41.97,
+        "draw": 44.19,
+        "oppWin": 13.84
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-02-07",
+      "team": "Sunderland",
+      "opponent": "Arsenal",
+      "pred": "Loss",
+      "pickLabel": "Arsenal to win",
+      "actual": "Loss",
+      "actualLabel": "Arsenal to win",
+      "teamPosition": 4,
+      "oppPosition": 3,
+      "probs": {
+        "teamWin": 23.11,
+        "draw": 33.46,
+        "oppWin": 43.43
       },
       "correct": true
+    },
+    {
+      "date": "2026-02-07",
+      "team": "Manchester United",
+      "opponent": "Tottenham Hotspur",
+      "pred": "Win",
+      "pickLabel": "Manchester United to win",
+      "actual": "Win",
+      "actualLabel": "Manchester United to win",
+      "teamPosition": 13,
+      "oppPosition": 2,
+      "probs": {
+        "teamWin": 42.27,
+        "draw": 36.5,
+        "oppWin": 21.24
+      },
+      "correct": true
+    },
+    {
+      "date": "2026-02-07",
+      "team": "Fulham",
+      "opponent": "Everton",
+      "pred": "Draw",
+      "pickLabel": "Draw",
+      "actual": "Loss",
+      "actualLabel": "Everton to win",
+      "teamPosition": 8,
+      "oppPosition": 14,
+      "probs": {
+        "teamWin": 23.7,
+        "draw": 54.81,
+        "oppWin": 21.49
+      },
+      "correct": false
     },
     {
       "date": "2025-10-20",
@@ -358,6 +375,23 @@
         "teamWin": 50.96,
         "draw": 29.32,
         "oppWin": 19.73
+      },
+      "correct": true
+    },
+    {
+      "date": "2025-10-19",
+      "team": "Tottenham Hotspur",
+      "opponent": "Aston Villa",
+      "pred": "Loss",
+      "pickLabel": "Aston Villa to win",
+      "actual": "Loss",
+      "actualLabel": "Aston Villa to win",
+      "teamPosition": 3,
+      "oppPosition": 13,
+      "probs": {
+        "teamWin": 27.07,
+        "draw": 31.68,
+        "oppWin": 41.26
       },
       "correct": true
     },
@@ -379,21 +413,21 @@
       "correct": false
     },
     {
-      "date": "2025-10-19",
-      "team": "Tottenham Hotspur",
-      "opponent": "Aston Villa",
-      "pred": "Loss",
-      "pickLabel": "Aston Villa to win",
+      "date": "2025-10-18",
+      "team": "Leeds United",
+      "opponent": "Burnley",
+      "pred": "Win",
+      "pickLabel": "Leeds United to win",
       "actual": "Loss",
-      "actualLabel": "Aston Villa to win",
-      "teamPosition": 3,
-      "oppPosition": 13,
+      "actualLabel": "Burnley to win",
+      "teamPosition": 15,
+      "oppPosition": 18,
       "probs": {
-        "teamWin": 27.07,
-        "draw": 31.68,
-        "oppWin": 41.26
+        "teamWin": 42.02,
+        "draw": 36.01,
+        "oppWin": 21.97
       },
-      "correct": true
+      "correct": false
     },
     {
       "date": "2025-10-18",
@@ -409,6 +443,40 @@
         "teamWin": 39.88,
         "draw": 37.94,
         "oppWin": 22.18
+      },
+      "correct": true
+    },
+    {
+      "date": "2025-10-18",
+      "team": "Newcastle United",
+      "opponent": "Brighton and Hove Albion",
+      "pred": "Win",
+      "pickLabel": "Newcastle United to win",
+      "actual": "Loss",
+      "actualLabel": "Brighton and Hove Albion to win",
+      "teamPosition": 11,
+      "oppPosition": 12,
+      "probs": {
+        "teamWin": 34.12,
+        "draw": 33.8,
+        "oppWin": 32.08
+      },
+      "correct": false
+    },
+    {
+      "date": "2025-10-18",
+      "team": "Nottingham Forest",
+      "opponent": "Chelsea",
+      "pred": "Loss",
+      "pickLabel": "Chelsea to win",
+      "actual": "Loss",
+      "actualLabel": "Chelsea to win",
+      "teamPosition": 17,
+      "oppPosition": 7,
+      "probs": {
+        "teamWin": 33.48,
+        "draw": 25.92,
+        "oppWin": 40.59
       },
       "correct": true
     },
@@ -431,18 +499,52 @@
     },
     {
       "date": "2025-10-05",
-      "team": "Aston Villa",
-      "opponent": "Burnley",
-      "pred": "Win",
-      "pickLabel": "Aston Villa to win",
-      "actual": "Win",
-      "actualLabel": "Aston Villa to win",
-      "teamPosition": 16,
-      "oppPosition": 18,
+      "team": "Nottingham Forest",
+      "opponent": "Newcastle United",
+      "pred": "Draw",
+      "pickLabel": "Draw",
+      "actual": "Loss",
+      "actualLabel": "Newcastle United to win",
+      "teamPosition": 17,
+      "oppPosition": 15,
       "probs": {
-        "teamWin": 50.38,
-        "draw": 23.42,
-        "oppWin": 26.2
+        "teamWin": 26.84,
+        "draw": 41.95,
+        "oppWin": 31.21
+      },
+      "correct": false
+    },
+    {
+      "date": "2025-10-05",
+      "team": "Brighton and Hove Albion",
+      "opponent": "Wolverhampton Wanderers",
+      "pred": "Win",
+      "pickLabel": "Brighton and Hove Albion to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 10,
+      "oppPosition": 20,
+      "probs": {
+        "teamWin": 51.44,
+        "draw": 26.11,
+        "oppWin": 22.46
+      },
+      "correct": false
+    },
+    {
+      "date": "2025-10-05",
+      "team": "Brentford",
+      "opponent": "Manchester City",
+      "pred": "Loss",
+      "pickLabel": "Manchester City to win",
+      "actual": "Loss",
+      "actualLabel": "Manchester City to win",
+      "teamPosition": 13,
+      "oppPosition": 7,
+      "probs": {
+        "teamWin": 10.19,
+        "draw": 17.14,
+        "oppWin": 72.68
       },
       "correct": true
     },
@@ -465,52 +567,35 @@
     },
     {
       "date": "2025-10-05",
-      "team": "Brentford",
-      "opponent": "Manchester City",
-      "pred": "Loss",
-      "pickLabel": "Manchester City to win",
-      "actual": "Loss",
-      "actualLabel": "Manchester City to win",
-      "teamPosition": 13,
-      "oppPosition": 7,
+      "team": "Aston Villa",
+      "opponent": "Burnley",
+      "pred": "Win",
+      "pickLabel": "Aston Villa to win",
+      "actual": "Win",
+      "actualLabel": "Aston Villa to win",
+      "teamPosition": 16,
+      "oppPosition": 18,
       "probs": {
-        "teamWin": 10.19,
-        "draw": 17.14,
-        "oppWin": 72.68
+        "teamWin": 50.38,
+        "draw": 23.42,
+        "oppWin": 26.2
       },
       "correct": true
     },
     {
-      "date": "2025-10-05",
-      "team": "Brighton and Hove Albion",
-      "opponent": "Wolverhampton Wanderers",
-      "pred": "Win",
-      "pickLabel": "Brighton and Hove Albion to win",
-      "actual": "Draw",
-      "actualLabel": "Draw",
-      "teamPosition": 10,
-      "oppPosition": 20,
+      "date": "2025-10-04",
+      "team": "Chelsea",
+      "opponent": "Liverpool",
+      "pred": "Loss",
+      "pickLabel": "Liverpool to win",
+      "actual": "Win",
+      "actualLabel": "Chelsea to win",
+      "teamPosition": 8,
+      "oppPosition": 1,
       "probs": {
-        "teamWin": 51.44,
-        "draw": 26.11,
-        "oppWin": 22.46
-      },
-      "correct": false
-    },
-    {
-      "date": "2025-10-05",
-      "team": "Nottingham Forest",
-      "opponent": "Newcastle United",
-      "pred": "Draw",
-      "pickLabel": "Draw",
-      "actual": "Loss",
-      "actualLabel": "Newcastle United to win",
-      "teamPosition": 17,
-      "oppPosition": 15,
-      "probs": {
-        "teamWin": 26.84,
-        "draw": 41.95,
-        "oppWin": 31.21
+        "teamWin": 17.31,
+        "draw": 15.67,
+        "oppWin": 67.02
       },
       "correct": false
     },
@@ -533,23 +618,6 @@
     },
     {
       "date": "2025-10-04",
-      "team": "Tottenham Hotspur",
-      "opponent": "Leeds United",
-      "pred": "Win",
-      "pickLabel": "Tottenham Hotspur to win",
-      "actual": "Win",
-      "actualLabel": "Tottenham Hotspur to win",
-      "teamPosition": 4,
-      "oppPosition": 12,
-      "probs": {
-        "teamWin": 38.82,
-        "draw": 25.25,
-        "oppWin": 35.93
-      },
-      "correct": true
-    },
-    {
-      "date": "2025-10-04",
       "team": "West Ham United",
       "opponent": "Arsenal",
       "pred": "Loss",
@@ -567,20 +635,20 @@
     },
     {
       "date": "2025-10-04",
-      "team": "Chelsea",
-      "opponent": "Liverpool",
-      "pred": "Loss",
-      "pickLabel": "Liverpool to win",
+      "team": "Tottenham Hotspur",
+      "opponent": "Leeds United",
+      "pred": "Win",
+      "pickLabel": "Tottenham Hotspur to win",
       "actual": "Win",
-      "actualLabel": "Chelsea to win",
-      "teamPosition": 8,
-      "oppPosition": 1,
+      "actualLabel": "Tottenham Hotspur to win",
+      "teamPosition": 4,
+      "oppPosition": 12,
       "probs": {
-        "teamWin": 17.31,
-        "draw": 15.67,
-        "oppWin": 67.02
+        "teamWin": 38.82,
+        "draw": 25.25,
+        "oppWin": 35.93
       },
-      "correct": false
+      "correct": true
     },
     {
       "date": "2025-10-03",
@@ -652,6 +720,57 @@
     },
     {
       "date": "2025-09-27",
+      "team": "Sunderland",
+      "opponent": "Nottingham Forest",
+      "pred": "Win",
+      "pickLabel": "Sunderland to win",
+      "actual": "Win",
+      "actualLabel": "Sunderland to win",
+      "teamPosition": 7,
+      "oppPosition": 15,
+      "probs": {
+        "teamWin": 34.34,
+        "draw": 32.98,
+        "oppWin": 32.68
+      },
+      "correct": true
+    },
+    {
+      "date": "2025-09-27",
+      "team": "Liverpool",
+      "opponent": "Crystal Palace",
+      "pred": "Win",
+      "pickLabel": "Liverpool to win",
+      "actual": "Loss",
+      "actualLabel": "Crystal Palace to win",
+      "teamPosition": 1,
+      "oppPosition": 5,
+      "probs": {
+        "teamWin": 41.7,
+        "draw": 29.16,
+        "oppWin": 29.13
+      },
+      "correct": false
+    },
+    {
+      "date": "2025-09-27",
+      "team": "Bournemouth",
+      "opponent": "Leeds United",
+      "pred": "Win",
+      "pickLabel": "Bournemouth to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 4,
+      "oppPosition": 12,
+      "probs": {
+        "teamWin": 52.19,
+        "draw": 30.23,
+        "oppWin": 17.57
+      },
+      "correct": false
+    },
+    {
+      "date": "2025-09-27",
       "team": "Burnley",
       "opponent": "Manchester City",
       "pred": "Loss",
@@ -666,6 +785,23 @@
         "oppWin": 73.05
       },
       "correct": true
+    },
+    {
+      "date": "2025-09-27",
+      "team": "Tottenham Hotspur",
+      "opponent": "Wolverhampton Wanderers",
+      "pred": "Win",
+      "pickLabel": "Tottenham Hotspur to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 3,
+      "oppPosition": 20,
+      "probs": {
+        "teamWin": 42.04,
+        "draw": 40.88,
+        "oppWin": 17.08
+      },
+      "correct": false
     },
     {
       "date": "2025-09-27",
@@ -700,74 +836,6 @@
         "oppWin": 14.14
       },
       "correct": false
-    },
-    {
-      "date": "2025-09-27",
-      "team": "Tottenham Hotspur",
-      "opponent": "Wolverhampton Wanderers",
-      "pred": "Win",
-      "pickLabel": "Tottenham Hotspur to win",
-      "actual": "Draw",
-      "actualLabel": "Draw",
-      "teamPosition": 3,
-      "oppPosition": 20,
-      "probs": {
-        "teamWin": 42.04,
-        "draw": 40.88,
-        "oppWin": 17.08
-      },
-      "correct": false
-    },
-    {
-      "date": "2025-09-27",
-      "team": "Bournemouth",
-      "opponent": "Leeds United",
-      "pred": "Win",
-      "pickLabel": "Bournemouth to win",
-      "actual": "Draw",
-      "actualLabel": "Draw",
-      "teamPosition": 4,
-      "oppPosition": 12,
-      "probs": {
-        "teamWin": 52.19,
-        "draw": 30.23,
-        "oppWin": 17.57
-      },
-      "correct": false
-    },
-    {
-      "date": "2025-09-27",
-      "team": "Liverpool",
-      "opponent": "Crystal Palace",
-      "pred": "Win",
-      "pickLabel": "Liverpool to win",
-      "actual": "Loss",
-      "actualLabel": "Crystal Palace to win",
-      "teamPosition": 1,
-      "oppPosition": 5,
-      "probs": {
-        "teamWin": 41.7,
-        "draw": 29.16,
-        "oppWin": 29.13
-      },
-      "correct": false
-    },
-    {
-      "date": "2025-09-27",
-      "team": "Sunderland",
-      "opponent": "Nottingham Forest",
-      "pred": "Win",
-      "pickLabel": "Sunderland to win",
-      "actual": "Win",
-      "actualLabel": "Sunderland to win",
-      "teamPosition": 7,
-      "oppPosition": 15,
-      "probs": {
-        "teamWin": 34.34,
-        "draw": 32.98,
-        "oppWin": 32.68
-      },
-      "correct": true
     },
     {
       "date": "2025-09-21",
@@ -822,52 +890,35 @@
     },
     {
       "date": "2025-09-20",
-      "team": "Chelsea",
-      "opponent": "Manchester United",
-      "pred": "Win",
-      "pickLabel": "Chelsea to win",
-      "actual": "Loss",
-      "actualLabel": "Manchester United to win",
-      "teamPosition": 5,
-      "oppPosition": 14,
+      "team": "Burnley",
+      "opponent": "Nottingham Forest",
+      "pred": "Draw",
+      "pickLabel": "Draw",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 17,
+      "oppPosition": 15,
       "probs": {
-        "teamWin": 39.61,
-        "draw": 32.4,
-        "oppWin": 27.99
-      },
-      "correct": false
-    },
-    {
-      "date": "2025-09-20",
-      "team": "Everton",
-      "opponent": "Liverpool",
-      "pred": "Loss",
-      "pickLabel": "Liverpool to win",
-      "actual": "Loss",
-      "actualLabel": "Liverpool to win",
-      "teamPosition": 6,
-      "oppPosition": 1,
-      "probs": {
-        "teamWin": 16.25,
-        "draw": 27.8,
-        "oppWin": 55.95
+        "teamWin": 23.84,
+        "draw": 40.2,
+        "oppWin": 35.96
       },
       "correct": true
     },
     {
       "date": "2025-09-20",
-      "team": "Tottenham Hotspur",
-      "opponent": "Brighton and Hove Albion",
+      "team": "Leeds United",
+      "opponent": "Wolverhampton Wanderers",
       "pred": "Loss",
-      "pickLabel": "Brighton and Hove Albion to win",
-      "actual": "Draw",
-      "actualLabel": "Draw",
-      "teamPosition": 3,
-      "oppPosition": 13,
+      "pickLabel": "Wolverhampton Wanderers to win",
+      "actual": "Win",
+      "actualLabel": "Leeds United to win",
+      "teamPosition": 16,
+      "oppPosition": 20,
       "probs": {
-        "teamWin": 28.35,
-        "draw": 29.16,
-        "oppWin": 42.49
+        "teamWin": 30.2,
+        "draw": 26.07,
+        "oppWin": 43.73
       },
       "correct": false
     },
@@ -890,37 +941,54 @@
     },
     {
       "date": "2025-09-20",
-      "team": "Leeds United",
-      "opponent": "Wolverhampton Wanderers",
+      "team": "Everton",
+      "opponent": "Liverpool",
       "pred": "Loss",
-      "pickLabel": "Wolverhampton Wanderers to win",
-      "actual": "Win",
-      "actualLabel": "Leeds United to win",
-      "teamPosition": 16,
-      "oppPosition": 20,
+      "pickLabel": "Liverpool to win",
+      "actual": "Loss",
+      "actualLabel": "Liverpool to win",
+      "teamPosition": 6,
+      "oppPosition": 1,
       "probs": {
-        "teamWin": 30.2,
-        "draw": 26.07,
-        "oppWin": 43.73
+        "teamWin": 16.25,
+        "draw": 27.8,
+        "oppWin": 55.95
+      },
+      "correct": true
+    },
+    {
+      "date": "2025-09-20",
+      "team": "Chelsea",
+      "opponent": "Manchester United",
+      "pred": "Win",
+      "pickLabel": "Chelsea to win",
+      "actual": "Loss",
+      "actualLabel": "Manchester United to win",
+      "teamPosition": 5,
+      "oppPosition": 14,
+      "probs": {
+        "teamWin": 39.61,
+        "draw": 32.4,
+        "oppWin": 27.99
       },
       "correct": false
     },
     {
       "date": "2025-09-20",
-      "team": "Burnley",
-      "opponent": "Nottingham Forest",
-      "pred": "Draw",
-      "pickLabel": "Draw",
+      "team": "Tottenham Hotspur",
+      "opponent": "Brighton and Hove Albion",
+      "pred": "Loss",
+      "pickLabel": "Brighton and Hove Albion to win",
       "actual": "Draw",
       "actualLabel": "Draw",
-      "teamPosition": 17,
-      "oppPosition": 15,
+      "teamPosition": 3,
+      "oppPosition": 13,
       "probs": {
-        "teamWin": 23.84,
-        "draw": 40.2,
-        "oppWin": 35.96
+        "teamWin": 28.35,
+        "draw": 29.16,
+        "oppWin": 42.49
       },
-      "correct": true
+      "correct": false
     },
     {
       "date": "2025-09-20",
@@ -941,12 +1009,12 @@
     }
   ],
   "metrics": {
-    "n": 45,
-    "accuracy": 0.5333
+    "n": 49,
+    "accuracy": 0.5102
   },
   "meta": {
     "upcomingCount": 10,
-    "historyCount": 45,
+    "historyCount": 49,
     "recentPreviewSize": 10,
     "historyPageSize": 20,
     "selectedModel": "stacking_lr_meta_oof",
@@ -954,6 +1022,7 @@
     "modelEvaluatedAt": "2026-09-24T12:21:00.884186+00:00",
     "modelReselectDays": 30,
     "modelTestAccuracy": 0.47748976807639837,
+    "modelSplit": {},
     "pipelineNote": "Weekly scrape and predict; model strategy re-evaluated about every 30 days on a scheduled run.",
     "positionsNote": "Table positions are computed from scraped match results in matches.csv. Run the weekly scrape to refresh; missing # means the team is not in the simulated table yet (often a naming or incomplete data issue)."
   }

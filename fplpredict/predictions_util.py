@@ -12,6 +12,18 @@ def _has_opponent(val) -> bool:
     return normalize_team_name(val) is not None
 
 
+def drop_invalid_fixtures(df: pd.DataFrame) -> pd.DataFrame:
+    """Remove rows with missing or identical team / opponent (bad scrape or mapping)."""
+    if df.empty:
+        return df
+    out = normalize_predictions_frame(df)
+    mask = out["Team"].notna() & out["Opponent"].notna()
+    mask &= out["Team"].astype(str).str.strip() != ""
+    mask &= out["Opponent"].astype(str).str.strip() != ""
+    mask &= out["Team"] != out["Opponent"]
+    return out[mask].copy()
+
+
 def normalize_predictions_frame(df: pd.DataFrame) -> pd.DataFrame:
     out = df.copy()
     out["Date"] = pd.to_datetime(out["Date"])
