@@ -1,0 +1,79 @@
+{
+  "league": "Ligue 1",
+  "selected_model": "soft_vote_val_log_loss",
+  "best_accuracy": 0.4222222222222222,
+  "evaluated_at": "2026-09-27T16:24:27.560127+00:00",
+  "split": {
+    "data_seasons": [
+      2023,
+      2024,
+      2025,
+      2026,
+      2027
+    ],
+    "train_seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "val_season": 2026,
+    "test_season": 2027
+  },
+  "scores": [
+    {
+      "model": "rf",
+      "accuracy": 0.4222222222222222,
+      "log_loss": 1.1091602104974025
+    },
+    {
+      "model": "xgb",
+      "accuracy": 0.35555555555555557,
+      "log_loss": 1.212798836492734
+    },
+    {
+      "model": "svc",
+      "accuracy": 0.4222222222222222,
+      "log_loss": 1.09339908404882
+    },
+    {
+      "model": "lr",
+      "accuracy": 0.4222222222222222,
+      "log_loss": 1.1033025326137307
+    },
+    {
+      "model": "soft_vote_fixed_4_4_1_1",
+      "accuracy": 0.4222222222222222,
+      "log_loss": 1.1164734922693158
+    },
+    {
+      "model": "soft_vote_val_log_loss",
+      "accuracy": 0.4222222222222222,
+      "log_loss": 1.0900418353598067
+    },
+    {
+      "model": "soft_vote_val_accuracy",
+      "accuracy": 0.4,
+      "log_loss": 1.0988106449497603
+    },
+    {
+      "model": "stacking_lr_meta_oof",
+      "accuracy": 0.37777777777777777,
+      "log_loss": 1.1061521678888495
+    }
+  ],
+  "tuned_weights": {
+    "soft_vote_val_log_loss": [
+      0.15078155509314078,
+      0.0,
+      0.8492184449068593,
+      0.0
+    ],
+    "soft_vote_val_accuracy": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ]
+  },
+  "reselect_days": 30
+}

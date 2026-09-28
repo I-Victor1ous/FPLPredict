@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-09-28T04:51:31.872095+00:00",
+  "defaultLeague": "Premier League",
+  "leagues": [
+    {
+      "name": "Premier League",
+      "slug": "premier-league"
+    },
+    {
+      "name": "La Liga",
+      "slug": "la-liga"
+    },
+    {
+      "name": "Bundesliga",
+      "slug": "bundesliga"
+    },
+    {
+      "name": "Serie A",
+      "slug": "serie-a"
+    },
+    {
+      "name": "Ligue 1",
+      "slug": "ligue-1"
+    }
+  ]
+}

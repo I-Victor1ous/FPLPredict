@@ -4,12 +4,16 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
+from fplpredict.config import LEAGUE as DEFAULT_LEAGUE, MODEL_RESELECT_DAYS, active_leagues, league_slug
 from fplpredict.data_io import read_csv
 from fplpredict.model.features import build_feature_matrix
-from fplpredict.config import MODEL_RESELECT_DAYS
 from fplpredict.model.ensemble import load_selection_meta, model_display_name
-from fplpredict.paths import PREDICTIONS_CSV, PREDICTIONS_JSON, WEB_DATA_DIR
-from fplpredict.predictions_util import backfill_actuals, dedupe_true_duplicates
+from fplpredict.paths import WEB_DATA_DIR, league_predictions_csv
+from fplpredict.predictions_util import (
+    backfill_actuals,
+    dedupe_true_duplicates,
+    drop_invalid_fixtures,
+)
 from fplpredict.teams import normalize_team_name
 
 log = logging.getLogger(__name__)
@@ -58,7 +62,6 @@ def _fixture_key(row) -> tuple:
 
 
 def _row_rank(row) -> tuple:
-    """Higher is better when choosing one row per fixture."""
     pos_score = 0
     if _clean_position(row.get("Team_position")) is not None:
         pos_score += 2
@@ -76,7 +79,6 @@ def _row_rank(row) -> tuple:
 
 
 def _dedupe_fixtures(df: pd.DataFrame) -> pd.DataFrame:
-    """One row per fixture (normalized team names); keep the best row."""
     if df.empty:
         return df
     best: dict[tuple, pd.Series] = {}
@@ -95,16 +97,14 @@ def _row_to_item(row) -> dict | None:
     team = normalize_team_name(_clean_str(row.get("Team")))
     opponent = normalize_team_name(_clean_str(row.get("Opponent")))
     pred = _clean_str(row.get("Pred"))
-    if not team or not opponent or not pred:
+    if not team or not opponent or not pred or team == opponent:
         return None
     actual = _clean_str(row.get("Actual"))
     pick_label = _outcome_label(team, opponent, pred)
     actual_label = (
         _outcome_label(team, opponent, actual) if actual is not None else None
     )
-    correct = (
-        pick_label == actual_label if actual_label is not None else None
-    )
+    correct = pick_label == actual_label if actual_label is not None else None
     return {
         "date": row["Date"].strftime("%Y-%m-%d"),
         "team": team,
@@ -146,16 +146,18 @@ def _metrics_from_history(items: list[dict]) -> dict | None:
     }
 
 
-def _model_meta_for_site() -> dict:
-    selection = load_selection_meta() or {}
+def _model_meta_for_site(league: str) -> dict:
+    selection = load_selection_meta(league) or {}
     strategy = selection.get("selected_model")
     reselect_days = selection.get("reselect_days", MODEL_RESELECT_DAYS)
+    split = selection.get("split") or {}
     return {
         "selectedModel": strategy,
         "modelLabel": model_display_name(strategy),
         "modelEvaluatedAt": selection.get("evaluated_at"),
         "modelReselectDays": reselect_days,
         "modelTestAccuracy": selection.get("best_accuracy"),
+        "modelSplit": split,
         "pipelineNote": (
             f"Weekly scrape and predict; model strategy re-evaluated about every "
             f"{reselect_days} days on a scheduled run."
@@ -163,38 +165,48 @@ def _model_meta_for_site() -> dict:
     }
 
 
-def export_predictions_json() -> dict:
-    df = dedupe_true_duplicates(pd.read_csv(PREDICTIONS_CSV, index_col=0))
+def _has_actual(series: pd.Series) -> pd.Series:
+    return series.notna() & (series.astype(str).str.strip() != "")
+
+
+def _partition_predictions(df: pd.DataFrame, today: pd.Timestamp) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Upcoming = no result and fixture date today or later; history = scored, before today."""
+    scored = _has_actual(df["Actual"])
+    upcoming = df[~scored & (df["Date"] >= today)].copy()
+    history_df = df[scored & (df["Date"] < today)].copy()
+    return upcoming, history_df
+
+
+def _export_league_payload(league: str) -> dict:
+    csv_path = league_predictions_csv(league)
+    if not csv_path.exists():
+        raise FileNotFoundError(f"No predictions CSV for {league}: {csv_path}")
+    df = drop_invalid_fixtures(dedupe_true_duplicates(pd.read_csv(csv_path, index_col=0)))
     df["Date"] = pd.to_datetime(df["Date"])
     try:
         past_matches, _, _ = build_feature_matrix(
             read_csv("matches.csv"),
             read_csv("next_matches.csv"),
             read_csv("history.csv"),
+            league=league,
         )
         df = backfill_actuals(df, past_matches)
         df = dedupe_true_duplicates(df)
     except Exception:
-        log.warning("Could not backfill Actual from match results", exc_info=True)
+        log.warning("[%s] Could not backfill Actual from match results", league, exc_info=True)
+
     today = pd.Timestamp.now().normalize()
-
-    upcoming = df[(df["Actual"].isna()) | (df["Actual"] == "")].copy()
-    upcoming = upcoming[upcoming["Date"] >= today]
-    upcoming = upcoming.sort_values("Date", ascending=True)
-    upcoming = _dedupe_fixtures(upcoming)
-
-    history_df = df[df["Actual"].notna() & (df["Actual"] != "")].copy()
-    history_df = history_df[history_df["Date"] < today]
-    history_df = history_df.sort_values("Date", ascending=False)
-    history_df = _dedupe_fixtures(history_df)
+    upcoming, history_df = _partition_predictions(df, today)
+    upcoming = _dedupe_fixtures(upcoming.sort_values("Date"))
+    history_df = _dedupe_fixtures(history_df.sort_values("Date", ascending=False))
 
     upcoming_items = _build_items(upcoming)
     history_items = _build_items(history_df)
     history_items.sort(key=lambda x: x["date"], reverse=True)
 
-    payload = {
+    return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "league": "Premier League",
+        "league": league,
         "upcoming": upcoming_items,
         "history": history_items,
         "metrics": _metrics_from_history(history_items),
@@ -203,7 +215,7 @@ def export_predictions_json() -> dict:
             "historyCount": len(history_items),
             "recentPreviewSize": 10,
             "historyPageSize": 20,
-            **_model_meta_for_site(),
+            **_model_meta_for_site(league),
             "positionsNote": (
                 "Table positions are computed from scraped match results in matches.csv. "
                 "Run the weekly scrape to refresh; missing # means the team is not in the "
@@ -212,9 +224,34 @@ def export_predictions_json() -> dict:
         },
     }
 
-    encoded = json.dumps(payload, indent=2, allow_nan=False)
-    PREDICTIONS_JSON.parent.mkdir(parents=True, exist_ok=True)
-    PREDICTIONS_JSON.write_text(encoded, encoding="utf-8")
+
+def export_predictions_json() -> dict:
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
-    (WEB_DATA_DIR / "predictions.json").write_text(encoded, encoding="utf-8")
-    return payload
+    leagues = active_leagues()
+    manifest_leagues = []
+    exported: dict[str, dict] = {}
+
+    for league in leagues:
+        slug = league_slug(league)
+        manifest_leagues.append({"name": league, "slug": slug})
+        try:
+            payload = _export_league_payload(league)
+        except FileNotFoundError:
+            log.warning("[%s] Skipping JSON export (no predictions CSV yet).", league)
+            continue
+        encoded = json.dumps(payload, indent=2, allow_nan=False)
+        (WEB_DATA_DIR / f"{slug}.json").write_text(encoded, encoding="utf-8")
+        exported[league] = payload
+
+    manifest = {
+        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "defaultLeague": DEFAULT_LEAGUE,
+        "leagues": manifest_leagues,
+    }
+    (WEB_DATA_DIR / "manifest.json").write_text(
+        json.dumps(manifest, indent=2), encoding="utf-8"
+    )
+
+    if exported:
+        return exported.get(leagues[0]) or next(iter(exported.values()))
+    return {}

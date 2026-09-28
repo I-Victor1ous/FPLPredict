@@ -24,14 +24,19 @@ from sklearn.utils.class_weight import compute_sample_weight
 from xgboost import XGBClassifier
 
 from fplpredict.config import (
+    LEAGUE as DEFAULT_LEAGUE,
     MODEL_FEATURES,
     MODEL_RESELECT_DAYS,
-    SEASON_SPLIT,
-    VAL_CUTOFF,
 )
 from fplpredict.data_io import read_csv
 from fplpredict.model.features import build_feature_matrix
-from fplpredict.paths import ARTIFACTS_DIR
+from fplpredict.model.splits import (
+    SeasonSplitMeta,
+    completed_past_matches,
+    restrict_last_n_seasons,
+    season_holdout_frames,
+)
+from fplpredict.paths import ARTIFACTS_DIR, league_artifacts_dir
 
 log = logging.getLogger(__name__)
 
@@ -67,10 +72,14 @@ def model_display_name(strategy: str | None) -> str:
         return "Auto-selected model"
     return MODEL_DISPLAY_NAMES.get(strategy, strategy.replace("_", " "))
 
-SELECTION_PATH = ARTIFACTS_DIR / "model_selection.json"
-PREDICTOR_PATH = ARTIFACTS_DIR / "predictor.joblib"
-SCALER_PATH = ARTIFACTS_DIR / "scaler.joblib"
-FEATURES_PATH = ARTIFACTS_DIR / "features.json"
+def _artifact_paths(league: str) -> dict[str, Path]:
+    base = league_artifacts_dir(league)
+    return {
+        "selection": base / "model_selection.json",
+        "predictor": base / "predictor.joblib",
+        "scaler": base / "scaler.joblib",
+        "features": base / "features.json",
+    }
 
 
 def build_base_estimators() -> list[tuple[str, object]]:
@@ -161,7 +170,7 @@ class SplitData:
     test_X: np.ndarray
     test_y: np.ndarray
     train_w: np.ndarray
-    val_cutoff: str
+    split_meta: SeasonSplitMeta
     test_start: pd.Timestamp
 
 
@@ -184,43 +193,36 @@ def assert_disjoint_splits(
         raise AssertionError("Test dates must lie in the held-out season.")
 
 
-def load_past_matches() -> pd.DataFrame:
+def load_past_matches(league: str = DEFAULT_LEAGUE) -> pd.DataFrame:
     matches = read_csv("matches.csv")
     next_matches = read_csv("next_matches.csv")
     history = read_csv("history.csv")
-    past_matches, _, _ = build_feature_matrix(matches, next_matches, history)
+    past_matches, _, _ = build_feature_matrix(
+        matches, next_matches, history, league=league
+    )
     past_matches["Date"] = pd.to_datetime(past_matches["Date"])
-    return past_matches.sort_values("Date")
+    past_matches = completed_past_matches(past_matches)
+    return restrict_last_n_seasons(past_matches).sort_values("Date")
 
 
 def partition_frames(
-    past_matches: pd.DataFrame, val_cutoff: str = VAL_CUTOFF
-) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.Timestamp]:
-    cutoff = pd.Timestamp(val_cutoff)
-    test_mask = past_matches["Season"] > SEASON_SPLIT
-    if not test_mask.any():
-        raise RuntimeError(f"No rows with Season > {SEASON_SPLIT} for test set")
-
-    test_start = past_matches.loc[test_mask, "Date"].min()
-    cal = past_matches[
-        (past_matches["Season"] <= SEASON_SPLIT)
-        & (past_matches["Date"] < test_start)
-    ]
-    train_df = cal[cal["Date"] < cutoff].sort_values("Date")
-    val_df = cal[cal["Date"] >= cutoff].sort_values("Date")
-    test_df = past_matches[test_mask].sort_values("Date")
+    past_matches: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.Timestamp, SeasonSplitMeta]:
+    train_df, val_df, test_df, meta = season_holdout_frames(past_matches)
+    if test_df.empty:
+        raise RuntimeError(
+            f"No completed matches in test season {meta.test_season}"
+        )
+    test_start = test_df["Date"].min()
     assert_disjoint_splits(train_df, val_df, test_df, test_start)
-    return train_df, val_df, test_df, test_start
+    return train_df, val_df, test_df, test_start, meta
 
 
 def build_eval_split(
     past_matches: pd.DataFrame,
     features: list[str],
-    val_cutoff: str = VAL_CUTOFF,
 ) -> SplitData:
-    train_df, val_df, test_df, test_start = partition_frames(
-        past_matches, val_cutoff
-    )
+    train_df, val_df, test_df, test_start, meta = partition_frames(past_matches)
     if len(train_df) < MIN_SPLIT_ROWS or len(val_df) < MIN_SPLIT_ROWS:
         raise RuntimeError(
             f"Train/val too small for evaluation (train={len(train_df)}, val={len(val_df)})"
@@ -244,7 +246,7 @@ def build_eval_split(
         test_X=test_X,
         test_y=test_y,
         train_w=train_w,
-        val_cutoff=val_cutoff,
+        split_meta=meta,
         test_start=test_start,
     )
 
@@ -375,10 +377,11 @@ def fit_production_predictor(
     past_matches: pd.DataFrame,
     features: list[str],
     tuned_weights: dict[str, list[float]],
-    val_cutoff: str = VAL_CUTOFF,
 ) -> tuple[FittedPredictor, StandardScaler]:
-    """Fit the chosen strategy on all completed matches for upcoming predictions."""
-    full_df = past_matches.sort_values("Date")
+    """Fit the chosen strategy on all completed matches in the modeling window."""
+    full_df = restrict_last_n_seasons(completed_past_matches(past_matches)).sort_values(
+        "Date"
+    )
     X = full_df[features].fillna(0)
     y = full_df["Target"].astype(int).to_numpy()
     sample_w = compute_sample_weight(class_weight=DRAW_CLASS_WEIGHT, y=y)
@@ -386,7 +389,7 @@ def fit_production_predictor(
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
-    train_df, val_df, _, _ = partition_frames(past_matches, val_cutoff)
+    train_df, val_df, _, _, _ = partition_frames(full_df)
     train_mask = full_df.index.isin(train_df.index)
     val_mask = full_df.index.isin(val_df.index)
     train_X = X_scaled[train_mask]
@@ -462,10 +465,14 @@ def names_index(name: str) -> int:
     raise ValueError(name)
 
 
-def load_selection_meta() -> dict | None:
-    if not SELECTION_PATH.exists():
+def load_selection_meta(league: str = DEFAULT_LEAGUE) -> dict | None:
+    path = _artifact_paths(league)["selection"]
+    if not path.exists():
+        legacy = ARTIFACTS_DIR / "model_selection.json"
+        if league == DEFAULT_LEAGUE and legacy.exists():
+            return json.loads(legacy.read_text(encoding="utf-8"))
         return None
-    return json.loads(SELECTION_PATH.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def selection_is_stale(meta: dict | None, reselect_days: int = MODEL_RESELECT_DAYS) -> bool:
@@ -484,54 +491,87 @@ def save_artifacts(
     scaler: StandardScaler,
     features: list[str],
     comparison: ComparisonResult,
+    league: str,
+    split_meta: SeasonSplitMeta,
 ) -> None:
-    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
-    joblib.dump(predictor, PREDICTOR_PATH)
-    joblib.dump(scaler, SCALER_PATH)
-    FEATURES_PATH.write_text(json.dumps(features, indent=2), encoding="utf-8")
+    paths = _artifact_paths(league)
+    paths["predictor"].parent.mkdir(parents=True, exist_ok=True)
+    joblib.dump(predictor, paths["predictor"])
+    joblib.dump(scaler, paths["scaler"])
+    paths["features"].write_text(json.dumps(features, indent=2), encoding="utf-8")
 
     meta = {
+        "league": league,
         "selected_model": comparison.best_model,
         "best_accuracy": comparison.best_accuracy,
         "evaluated_at": datetime.now(timezone.utc).isoformat(),
-        "val_cutoff": VAL_CUTOFF,
+        "split": {
+            "data_seasons": list(split_meta.all_seasons),
+            "train_seasons": list(split_meta.train_seasons),
+            "val_season": split_meta.val_season,
+            "test_season": split_meta.test_season,
+        },
         "scores": comparison.scores,
         "tuned_weights": comparison.tuned_weights,
         "reselect_days": MODEL_RESELECT_DAYS,
     }
-    SELECTION_PATH.write_text(json.dumps(meta, indent=2), encoding="utf-8")
+    paths["selection"].write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
 
-def load_production_artifacts() -> tuple[FittedPredictor, StandardScaler, list[str]]:
-    if not PREDICTOR_PATH.exists() or not SCALER_PATH.exists():
-        raise FileNotFoundError("Production model artifacts missing; run model selection.")
-    predictor = joblib.load(PREDICTOR_PATH)
-    scaler = joblib.load(SCALER_PATH)
-    features = json.loads(FEATURES_PATH.read_text(encoding="utf-8"))
+def load_production_artifacts(
+    league: str = DEFAULT_LEAGUE,
+) -> tuple[FittedPredictor, StandardScaler, list[str]]:
+    paths = _artifact_paths(league)
+    if not paths["predictor"].exists() or not paths["scaler"].exists():
+        if league == DEFAULT_LEAGUE:
+            legacy_p = ARTIFACTS_DIR / "predictor.joblib"
+            legacy_s = ARTIFACTS_DIR / "scaler.joblib"
+            legacy_f = ARTIFACTS_DIR / "features.json"
+            if legacy_p.exists() and legacy_s.exists():
+                predictor = joblib.load(legacy_p)
+                scaler = joblib.load(legacy_s)
+                features = json.loads(legacy_f.read_text(encoding="utf-8"))
+                return predictor, scaler, features
+        raise FileNotFoundError(
+            f"Production model artifacts missing for {league}; run model selection."
+        )
+    predictor = joblib.load(paths["predictor"])
+    scaler = joblib.load(paths["scaler"])
+    features = json.loads(paths["features"].read_text(encoding="utf-8"))
     return predictor, scaler, features
 
 
 def ensure_production_model(
     past_matches: pd.DataFrame,
     features: list[str],
+    league: str = DEFAULT_LEAGUE,
     force_reselect: bool = False,
 ) -> tuple[FittedPredictor, StandardScaler]:
-    meta = load_selection_meta()
+    meta = load_selection_meta(league)
     if not force_reselect and not selection_is_stale(meta):
         log.info(
-            "Using cached model %s (evaluated %s).",
+            "[%s] Using cached model %s (evaluated %s).",
+            league,
             meta.get("selected_model"),
             meta.get("evaluated_at"),
         )
-        predictor, scaler, _ = load_production_artifacts()
+        predictor, scaler, _ = load_production_artifacts(league)
         return predictor, scaler
 
-    log.info("Running model comparison (val cutoff %s)…", VAL_CUTOFF)
-    split = build_eval_split(past_matches, features)
+    modeling = restrict_last_n_seasons(completed_past_matches(past_matches))
+    split = build_eval_split(modeling, features)
+    log.info(
+        "[%s] Model comparison — train seasons %s, val %s, test %s (completed only)…",
+        league,
+        split.split_meta.train_seasons,
+        split.split_meta.val_season,
+        split.split_meta.test_season,
+    )
     comparison = compare_candidates(split)
     strategy = pick_best_strategy(comparison)
     log.info(
-        "Selected %s (test accuracy %.4f). Scores: %s",
+        "[%s] Selected %s (test accuracy %.4f). Scores: %s",
+        league,
         strategy,
         comparison.best_accuracy,
         {s["model"]: round(s["accuracy"], 4) for s in comparison.scores},
@@ -540,23 +580,27 @@ def ensure_production_model(
     predictor, scaler = fit_production_predictor(
         strategy, past_matches, features, comparison.tuned_weights
     )
-    save_artifacts(predictor, scaler, features, comparison)
+    save_artifacts(
+        predictor, scaler, features, comparison, league, split.split_meta
+    )
     return predictor, scaler
 
 
-def run_comparison_report(val_cutoff: str = VAL_CUTOFF) -> ComparisonResult:
+def run_comparison_report(league: str = DEFAULT_LEAGUE) -> ComparisonResult:
     """Load data, compare candidates, print ranked table (notebook / CLI)."""
-    past_matches = load_past_matches()
+    past_matches = load_past_matches(league)
     features = [f for f in MODEL_FEATURES if f in past_matches.columns]
-    split = build_eval_split(past_matches, features, val_cutoff)
+    split = build_eval_split(past_matches, features)
     comparison = compare_candidates(split)
     df = pd.DataFrame(comparison.scores).sort_values(
         ["accuracy", "log_loss"], ascending=[False, True]
     )
+    sm = split.split_meta
     print(
-        f"Evaluation: val_cutoff={val_cutoff}, train={len(split.train_y)}, "
-        f"val={len(split.val_y)}, test={len(split.test_y)} "
-        f"(test season > {SEASON_SPLIT}, disjoint from val)"
+        f"League: {league} | train seasons {sm.train_seasons}, "
+        f"val {sm.val_season}, test {sm.test_season} | "
+        f"rows train={len(split.train_y)}, val={len(split.val_y)}, "
+        f"test={len(split.test_y)} (completed matches only)"
     )
     print(df.to_string(index=False, float_format=lambda x: f"{x:.4f}"))
     print(f"\nBest on test season: {comparison.best_model}")

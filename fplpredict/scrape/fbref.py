@@ -16,7 +16,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from seleniumbase import Driver
 
-from fplpredict.config import LEAGUE, LEAGUE_INFO_URLS, YEAR_DIFF
+from fplpredict.config import LEAGUE_INFO_URLS, YEAR_DIFF, active_leagues
+from fplpredict.model.splits import prune_matches_by_season_window
 from fplpredict.data_io import read_csv, write_csv
 from fplpredict.paths import DATA_DIR, LOG_DIR
 
@@ -48,6 +49,7 @@ def _get_matches_stats(
     next_matches,
     history_matches,
     head_to_head_urls,
+    league: str,
 ):
     for team_url in team_urls:
         team_name_with_dash = team_url.split("/")[-1].replace("-Stats", "")
@@ -158,7 +160,7 @@ def _get_matches_stats(
         team_data = team_data[team_data["Date"] != "Date"]
         all_matches.append(team_data)
         if not next_match.empty:
-            next_match = next_match[next_match["Comp"] == LEAGUE]
+            next_match = next_match[next_match["Comp"] == league]
             next_matches.append(pd.DataFrame([next_match.iloc[0]]))
 
         time.sleep(5)
@@ -166,16 +168,17 @@ def _get_matches_stats(
     return all_matches, next_matches, history_matches
 
 
-def _collect_seasons(driver, current_data_year=0):
+def _collect_seasons(driver, league: str, current_data_year: int = 0):
     end_year = datetime.now().year
-    start_year = max(end_year - YEAR_DIFF, current_data_year)
-    years = np.arange(end_year, start_year, -1)
+    earliest = end_year - (YEAR_DIFF - 1)
+    start_year = max(earliest, current_data_year)
+    years = np.arange(end_year, start_year - 1, -1)
     if len(years) == 0:
-        years = [end_year]
+        years = np.array([end_year])
 
     past_matches, next_matches, history_matches = [], [], []
     head_to_head_urls = set()
-    info_url = LEAGUE_INFO_URLS[LEAGUE]
+    info_url = LEAGUE_INFO_URLS[league]
 
     for _year in years:
         page_source = None
@@ -221,6 +224,7 @@ def _collect_seasons(driver, current_data_year=0):
             next_matches,
             history_matches,
             head_to_head_urls,
+            league,
         )
 
     return past_matches, next_matches, history_matches
@@ -244,10 +248,18 @@ def _save_scrape_results(new_matches, next_new_matches, history_new_matches) -> 
             )
         except FileNotFoundError:
             match_df = new_matches
+        match_df = prune_matches_by_season_window(match_df)
         write_csv(match_df, "matches.csv")
 
     if next_new_matches:
         next_df = pd.concat(next_new_matches, ignore_index=True)
+        try:
+            existing_next = read_csv("next_matches.csv")
+            scraped_comps = set(next_df["Comp"].dropna().unique())
+            keep = existing_next[~existing_next["Comp"].isin(scraped_comps)]
+            next_df = pd.concat([next_df, keep], ignore_index=True)
+        except FileNotFoundError:
+            pass
         write_csv(next_df, "next_matches.csv")
 
     if history_new_matches:
@@ -277,18 +289,29 @@ def _save_scrape_results(new_matches, next_new_matches, history_new_matches) -> 
         write_csv(history_df, "history.csv")
 
 
+def _scrape_league(driver, league: str) -> tuple:
+    try:
+        csv_all_matches = read_csv("matches.csv").sort_values("Date", ascending=False)
+        league_rows = csv_all_matches[csv_all_matches["Comp"] == league]
+        if league_rows.empty:
+            current_data_year = 0
+        else:
+            current_data_year = int(league_rows.iloc[0]["Season"])
+        return _collect_seasons(driver, league, current_data_year)
+    except (FileNotFoundError, pd.errors.EmptyDataError):
+        return _collect_seasons(driver, league)
+
+
 def run_scrape() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     driver = Driver(uc=True, browser="chrome")
     try:
-        try:
-            csv_all_matches = read_csv("matches.csv").sort_values(
-                "Date", ascending=False
-            )
-            current_data_year = int(csv_all_matches.iloc[0]["Season"])
-            results = _collect_seasons(driver, current_data_year)
-        except (FileNotFoundError, pd.errors.EmptyDataError):
-            results = _collect_seasons(driver)
-        _save_scrape_results(*results)
+        all_past, all_next, all_history = [], [], []
+        for league in active_leagues():
+            past, nxt, hist = _scrape_league(driver, league)
+            all_past.extend(past)
+            all_next.extend(nxt)
+            all_history.extend(hist)
+        _save_scrape_results(all_past, all_next, all_history)
     finally:
         driver.quit()

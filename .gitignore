@@ -13,3 +13,5 @@ downloaded_files/
 # Optional: keep CSVs in git; ignore large scratch files
 new.csv
 check
+
+node_modules/

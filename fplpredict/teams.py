@@ -16,6 +16,14 @@ TEAM_ALIASES: dict[str, str] = {
     "Brighton": "Brighton and Hove Albion",
     "West Ham": "West Ham United",
     "Wolves": "Wolverhampton Wanderers",
+    # Bundesliga
+    "Koln": "Köln",
+    "Monchengladbach": "Gladbach",
+    "Mönchengladbach": "Gladbach",
+    "Borussia M'gladbach": "Gladbach",
+    # Ligue 1
+    "Paris Saint Germain": "Paris SG",
+    "Paris Saint-Germain": "Paris SG",
 }
 
 

@@ -1,30 +1,36 @@
 import json
+import logging
 
 import numpy as np
 import pandas as pd
 
-from fplpredict.config import MODEL_FEATURES, RESULT_LABELS
+from fplpredict.config import MODEL_FEATURES, RESULT_LABELS, active_leagues
 from fplpredict.model.ensemble import ensure_production_model
 from fplpredict.model.features import build_feature_matrix
 from fplpredict.data_io import read_csv
-from fplpredict.paths import ARTIFACTS_DIR, PREDICTIONS_CSV
+from fplpredict.paths import league_artifacts_dir, league_predictions_csv
+from fplpredict.predictions_store import migrate_legacy_prediction_files
 from fplpredict.predictions_util import (
     backfill_actuals,
     dedupe_true_duplicates,
+    drop_invalid_fixtures,
     normalize_predictions_frame,
 )
 
+log = logging.getLogger(__name__)
+
 
 def _merge_predictions(
-    result: pd.DataFrame, past_matches: pd.DataFrame, predictions_path
+    result: pd.DataFrame,
+    past_matches: pd.DataFrame,
+    predictions_path,
 ) -> pd.DataFrame:
     frames = []
-    for path in (predictions_path,):
-        if path.exists():
-            try:
-                frames.append(pd.read_csv(path, index_col=0))
-            except pd.errors.EmptyDataError:
-                pass
+    if predictions_path.exists():
+        try:
+            frames.append(pd.read_csv(predictions_path, index_col=0))
+        except pd.errors.EmptyDataError:
+            pass
     if frames:
         existing = dedupe_true_duplicates(pd.concat(frames, ignore_index=True))
     else:
@@ -75,14 +81,16 @@ def _merge_predictions(
 
 
 def run_prediction_pipeline(
-    save_artifacts: bool = True, force_model_reselect: bool = False
+    league: str,
+    save_artifacts: bool = True,
+    force_model_reselect: bool = False,
 ) -> pd.DataFrame:
     matches = read_csv("matches.csv")
     next_matches = read_csv("next_matches.csv")
     history = read_csv("history.csv")
 
     past_matches, future_matches, _team_mapping_dict = build_feature_matrix(
-        matches, next_matches, history
+        matches, next_matches, history, league=league
     )
     past_matches["Date"] = pd.to_datetime(past_matches["Date"])
 
@@ -94,12 +102,21 @@ def run_prediction_pipeline(
     predictor, scaler = ensure_production_model(
         past_matches,
         features,
+        league=league,
         force_reselect=force_model_reselect,
     )
 
-    predict_x = future_matches[features].fillna(0)
+    if future_matches.empty:
+        log.warning("[%s] No upcoming fixtures in next_matches.csv", league)
+        predict_x = pd.DataFrame()
+    else:
+        predict_x = future_matches[features].fillna(0)
+
+    predictions_path = league_predictions_csv(league)
     if predict_x.empty:
-        raise RuntimeError("No upcoming fixtures found in next_matches.csv")
+        if predictions_path.exists():
+            return pd.read_csv(predictions_path, index_col=0)
+        raise RuntimeError(f"No upcoming fixtures found for {league}")
 
     predict_scaled = scaler.transform(predict_x)
     voter_preds = predictor.predict(predict_scaled)
@@ -120,16 +137,33 @@ def run_prediction_pipeline(
         }
     )
 
-    merged = _merge_predictions(result, past_matches, PREDICTIONS_CSV)
+    merged = _merge_predictions(result, past_matches, predictions_path)
     merged = backfill_actuals(merged, past_matches)
-    merged = dedupe_true_duplicates(merged)
-    PREDICTIONS_CSV.parent.mkdir(parents=True, exist_ok=True)
-    merged.to_csv(PREDICTIONS_CSV)
+    merged = drop_invalid_fixtures(dedupe_true_duplicates(merged))
+    predictions_path.parent.mkdir(parents=True, exist_ok=True)
+    merged.to_csv(predictions_path)
 
     if save_artifacts:
-        ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
-        (ARTIFACTS_DIR / "features.json").write_text(
+        art_dir = league_artifacts_dir(league)
+        art_dir.mkdir(parents=True, exist_ok=True)
+        (art_dir / "features.json").write_text(
             json.dumps(features, indent=2), encoding="utf-8"
         )
 
     return merged
+
+
+def run_all_league_predictions(force_model_reselect: bool = False) -> dict[str, pd.DataFrame]:
+    migrate_legacy_prediction_files()
+    results: dict[str, pd.DataFrame] = {}
+    for league in active_leagues():
+        log.info("Prediction pipeline for %s", league)
+        try:
+            results[league] = run_prediction_pipeline(
+                league=league, force_model_reselect=force_model_reselect
+            )
+        except Exception:
+            log.exception("[%s] Prediction pipeline failed; skipping league.", league)
+    if not results:
+        raise RuntimeError("No league completed the prediction pipeline.")
+    return results

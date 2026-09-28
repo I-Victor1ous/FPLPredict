@@ -10,7 +10,8 @@ from datetime import datetime
 from fplpredict.config import MODEL_RESELECT_DAYS
 from fplpredict.export import export_predictions_json
 from fplpredict.model.ensemble import load_selection_meta, selection_is_stale
-from fplpredict.model.predict import run_prediction_pipeline
+from fplpredict.config import active_leagues
+from fplpredict.model.predict import run_all_league_predictions
 from fplpredict.paths import LOG_DIR
 from fplpredict.scrape.fbref import run_scrape
 
@@ -45,8 +46,11 @@ def main() -> int:
     log = logging.getLogger(__name__)
 
     try:
-        meta = load_selection_meta()
-        will_reselect = args.force_model_reselect or selection_is_stale(meta)
+        leagues = active_leagues()
+        stale_any = any(
+            selection_is_stale(load_selection_meta(league)) for league in leagues
+        )
+        will_reselect = args.force_model_reselect or stale_any
         log.info(
             "Schedule: weekly scrape + predict; model reselection every %d days "
             "(this run: %s).",
@@ -63,16 +67,25 @@ def main() -> int:
         else:
             log.info("Skipping scrape (--skip-scrape).")
 
-        log.info("Running prediction pipeline…")
-        run_prediction_pipeline(force_model_reselect=args.force_model_reselect)
-        log.info("Predictions written.")
-
-        payload = export_predictions_json()
-        log.info(
-            "Exported JSON (%d upcoming, %d history rows).",
-            len(payload["upcoming"]),
-            len(payload["history"]),
+        log.info("Running prediction pipeline for: %s", ", ".join(leagues))
+        completed = run_all_league_predictions(
+            force_model_reselect=args.force_model_reselect
         )
+        log.info(
+            "Predictions written for %d league(s): %s",
+            len(completed),
+            ", ".join(completed),
+        )
+
+        exported = export_predictions_json()
+        if exported:
+            log.info(
+                "Exported site JSON (default league: %d upcoming, %d history).",
+                len(exported.get("upcoming", [])),
+                len(exported.get("history", [])),
+            )
+        else:
+            log.warning("No league JSON exported (missing predictions CSVs).")
         return 0
     except Exception:
         log.exception("Weekly pipeline failed.")
