@@ -1,142 +1,179 @@
 {
-  "generatedAt": "2026-10-22T23:22:05.487637+00:00",
+  "generatedAt": "2026-10-28T16:04:20.674257+00:00",
   "league": "Bundesliga",
   "upcoming": [
     {
-      "date": "2026-10-23",
-      "team": "Stuttgart",
-      "opponent": "Gladbach",
-      "pred": "Win",
-      "pickLabel": "Stuttgart to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 13,
-      "oppPosition": 18,
-      "probs": {
-        "teamWin": 67.8,
-        "draw": 22.47,
-        "oppWin": 9.73
-      },
-      "correct": null
-    },
-    {
-      "date": "2026-10-24",
-      "team": "K\u00f6ln",
-      "opponent": "Schalke 04",
-      "pred": "Win",
-      "pickLabel": "K\u00f6ln to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 12,
-      "oppPosition": 15,
-      "probs": {
-        "teamWin": 47.77,
-        "draw": 27.17,
-        "oppWin": 25.07
-      },
-      "correct": null
-    },
-    {
-      "date": "2026-10-24",
-      "team": "Werder Bremen",
+      "date": "2026-10-30",
+      "team": "Elversberg",
       "opponent": "Mainz 05",
       "pred": "Loss",
       "pickLabel": "Mainz 05 to win",
       "actual": null,
       "actualLabel": null,
       "teamPosition": 8,
-      "oppPosition": 5,
+      "oppPosition": 7,
       "probs": {
-        "teamWin": 20.52,
-        "draw": 24.9,
-        "oppWin": 54.59
+        "teamWin": 34.55,
+        "draw": 27.27,
+        "oppWin": 38.18
       },
       "correct": null
     },
     {
-      "date": "2026-10-24",
-      "team": "Dortmund",
-      "opponent": "Eintracht Frankfurt",
+      "date": "2026-10-31",
+      "team": "Leverkusen",
+      "opponent": "Stuttgart",
       "pred": "Win",
-      "pickLabel": "Dortmund to win",
+      "pickLabel": "Leverkusen to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 2,
-      "oppPosition": 11,
+      "teamPosition": 4,
+      "oppPosition": 15,
       "probs": {
-        "teamWin": 66.24,
-        "draw": 22.33,
-        "oppWin": 11.43
+        "teamWin": 58.41,
+        "draw": 23.1,
+        "oppWin": 18.49
       },
       "correct": null
     },
     {
-      "date": "2026-10-24",
-      "team": "Union Berlin",
-      "opponent": "Augsburg",
+      "date": "2026-10-31",
+      "team": "Hoffenheim",
+      "opponent": "Werder Bremen",
       "pred": "Loss",
-      "pickLabel": "Augsburg to win",
+      "pickLabel": "Werder Bremen to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 17,
-      "oppPosition": 10,
+      "teamPosition": 10,
+      "oppPosition": 6,
       "probs": {
-        "teamWin": 13.89,
-        "draw": 20.1,
-        "oppWin": 66.01
+        "teamWin": 35.94,
+        "draw": 24.63,
+        "oppWin": 39.44
       },
       "correct": null
     },
     {
-      "date": "2026-10-24",
-      "team": "Paderborn 07",
-      "opponent": "Hamburger SV",
-      "pred": "Win",
-      "pickLabel": "Paderborn 07 to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 16,
-      "oppPosition": 9,
-      "probs": {
-        "teamWin": 38.89,
-        "draw": 31.64,
-        "oppWin": 29.46
-      },
-      "correct": null
-    },
-    {
-      "date": "2026-10-24",
-      "team": "RB Leipzig",
-      "opponent": "Elversberg",
-      "pred": "Win",
+      "date": "2026-10-31",
+      "team": "Schalke 04",
+      "opponent": "RB Leipzig",
+      "pred": "Loss",
       "pickLabel": "RB Leipzig to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 7,
-      "oppPosition": 6,
+      "teamPosition": 16,
+      "oppPosition": 5,
       "probs": {
-        "teamWin": 69.78,
-        "draw": 17.47,
-        "oppWin": 12.74
+        "teamWin": 9.61,
+        "draw": 14.57,
+        "oppWin": 75.81
       },
       "correct": null
     },
+    {
+      "date": "2026-10-31",
+      "team": "Bayern Munich",
+      "opponent": "Dortmund",
+      "pred": "Win",
+      "pickLabel": "Bayern Munich to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 1,
+      "oppPosition": 2,
+      "probs": {
+        "teamWin": 69.51,
+        "draw": 19.65,
+        "oppWin": 10.83
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-31",
+      "team": "Augsburg",
+      "opponent": "Freiburg",
+      "pred": "Loss",
+      "pickLabel": "Freiburg to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 9,
+      "oppPosition": 3,
+      "probs": {
+        "teamWin": 31.53,
+        "draw": 32.98,
+        "oppWin": 35.49
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-31",
+      "team": "Gladbach",
+      "opponent": "Paderborn 07",
+      "pred": "Win",
+      "pickLabel": "Gladbach to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 18,
+      "oppPosition": 13,
+      "probs": {
+        "teamWin": 41.27,
+        "draw": 28.92,
+        "oppWin": 29.8
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-11-01",
+      "team": "Union Berlin",
+      "opponent": "K\u00f6ln",
+      "pred": "Win",
+      "pickLabel": "Union Berlin to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 17,
+      "oppPosition": 12,
+      "probs": {
+        "teamWin": 47.18,
+        "draw": 27.12,
+        "oppWin": 25.71
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-11-01",
+      "team": "Hamburger SV",
+      "opponent": "Eintracht Frankfurt",
+      "pred": "Loss",
+      "pickLabel": "Eintracht Frankfurt to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 11,
+      "oppPosition": 14,
+      "probs": {
+        "teamWin": 21.04,
+        "draw": 24.79,
+        "oppWin": 54.17
+      },
+      "correct": null
+    }
+  ],
+  "awaitingResult": [],
+  "history": [
     {
       "date": "2026-10-25",
       "team": "Hoffenheim",
       "opponent": "Leverkusen",
       "pred": "Loss",
       "pickLabel": "Leverkusen to win",
-      "actual": null,
-      "actualLabel": null,
+      "actual": "Win",
+      "actualLabel": "Hoffenheim to win",
       "teamPosition": 14,
       "oppPosition": 4,
       "probs": {
-        "teamWin": 17.35,
-        "draw": 21.9,
-        "oppWin": 60.76
+        "teamWin": 18.35,
+        "draw": 24.88,
+        "oppWin": 56.77
       },
-      "correct": null
+      "correct": false
     },
     {
       "date": "2026-10-25",
@@ -144,20 +181,136 @@
       "opponent": "Bayern Munich",
       "pred": "Loss",
       "pickLabel": "Bayern Munich to win",
-      "actual": null,
-      "actualLabel": null,
+      "actual": "Loss",
+      "actualLabel": "Bayern Munich to win",
       "teamPosition": 3,
       "oppPosition": 1,
       "probs": {
-        "teamWin": 9.46,
-        "draw": 15.26,
-        "oppWin": 75.28
+        "teamWin": 12.93,
+        "draw": 20.7,
+        "oppWin": 66.37
       },
-      "correct": null
-    }
-  ],
-  "awaitingResult": [],
-  "history": [
+      "correct": true
+    },
+    {
+      "date": "2026-10-24",
+      "team": "Union Berlin",
+      "opponent": "Augsburg",
+      "pred": "Loss",
+      "pickLabel": "Augsburg to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 17,
+      "oppPosition": 10,
+      "probs": {
+        "teamWin": 16.88,
+        "draw": 27.36,
+        "oppWin": 55.76
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-10-24",
+      "team": "RB Leipzig",
+      "opponent": "Elversberg",
+      "pred": "Win",
+      "pickLabel": "RB Leipzig to win",
+      "actual": "Win",
+      "actualLabel": "RB Leipzig to win",
+      "teamPosition": 7,
+      "oppPosition": 6,
+      "probs": {
+        "teamWin": 74.64,
+        "draw": 17.52,
+        "oppWin": 7.84
+      },
+      "correct": true
+    },
+    {
+      "date": "2026-10-24",
+      "team": "Werder Bremen",
+      "opponent": "Mainz 05",
+      "pred": "Loss",
+      "pickLabel": "Mainz 05 to win",
+      "actual": "Win",
+      "actualLabel": "Werder Bremen to win",
+      "teamPosition": 8,
+      "oppPosition": 5,
+      "probs": {
+        "teamWin": 22.54,
+        "draw": 28.41,
+        "oppWin": 49.05
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-10-24",
+      "team": "Paderborn 07",
+      "opponent": "Hamburger SV",
+      "pred": "Win",
+      "pickLabel": "Paderborn 07 to win",
+      "actual": "Win",
+      "actualLabel": "Paderborn 07 to win",
+      "teamPosition": 16,
+      "oppPosition": 9,
+      "probs": {
+        "teamWin": 42.45,
+        "draw": 32.64,
+        "oppWin": 24.91
+      },
+      "correct": true
+    },
+    {
+      "date": "2026-10-24",
+      "team": "Eintracht Frankfurt",
+      "opponent": "Dortmund",
+      "pred": "Loss",
+      "pickLabel": "Dortmund to win",
+      "actual": "Loss",
+      "actualLabel": "Dortmund to win",
+      "teamPosition": 8,
+      "oppPosition": 2,
+      "probs": {
+        "teamWin": 4.36,
+        "draw": 6.6,
+        "oppWin": 89.04
+      },
+      "correct": true
+    },
+    {
+      "date": "2026-10-24",
+      "team": "K\u00f6ln",
+      "opponent": "Schalke 04",
+      "pred": "Win",
+      "pickLabel": "K\u00f6ln to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 12,
+      "oppPosition": 15,
+      "probs": {
+        "teamWin": 57.67,
+        "draw": 18.54,
+        "oppWin": 23.79
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-10-23",
+      "team": "Stuttgart",
+      "opponent": "Gladbach",
+      "pred": "Win",
+      "pickLabel": "Stuttgart to win",
+      "actual": "Loss",
+      "actualLabel": "Gladbach to win",
+      "teamPosition": 13,
+      "oppPosition": 18,
+      "probs": {
+        "teamWin": 67.03,
+        "draw": 23.36,
+        "oppWin": 9.61
+      },
+      "correct": false
+    },
     {
       "date": "2026-10-18",
       "team": "Hoffenheim",
@@ -194,18 +347,18 @@
     },
     {
       "date": "2026-10-17",
-      "team": "Stuttgart",
-      "opponent": "Hamburger SV",
-      "pred": "Win",
-      "pickLabel": "Stuttgart to win",
-      "actual": "Loss",
-      "actualLabel": "Hamburger SV to win",
-      "teamPosition": 15,
-      "oppPosition": 16,
+      "team": "Elversberg",
+      "opponent": "Augsburg",
+      "pred": "Loss",
+      "pickLabel": "Augsburg to win",
+      "actual": "Win",
+      "actualLabel": "Elversberg to win",
+      "teamPosition": 9,
+      "oppPosition": 6,
       "probs": {
-        "teamWin": 49.13,
-        "draw": 29.6,
-        "oppWin": 21.28
+        "teamWin": 33.59,
+        "draw": 30.33,
+        "oppWin": 36.09
       },
       "correct": false
     },
@@ -228,23 +381,6 @@
     },
     {
       "date": "2026-10-17",
-      "team": "Elversberg",
-      "opponent": "Augsburg",
-      "pred": "Loss",
-      "pickLabel": "Augsburg to win",
-      "actual": "Win",
-      "actualLabel": "Elversberg to win",
-      "teamPosition": 9,
-      "oppPosition": 6,
-      "probs": {
-        "teamWin": 33.59,
-        "draw": 30.33,
-        "oppWin": 36.09
-      },
-      "correct": false
-    },
-    {
-      "date": "2026-10-17",
       "team": "Mainz 05",
       "opponent": "Schalke 04",
       "pred": "Win",
@@ -259,6 +395,23 @@
         "oppWin": 22.95
       },
       "correct": true
+    },
+    {
+      "date": "2026-10-17",
+      "team": "Union Berlin",
+      "opponent": "Dortmund",
+      "pred": "Loss",
+      "pickLabel": "Dortmund to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 17,
+      "oppPosition": 1,
+      "probs": {
+        "teamWin": 12.39,
+        "draw": 29.28,
+        "oppWin": 58.33
+      },
+      "correct": false
     },
     {
       "date": "2026-10-17",
@@ -279,18 +432,18 @@
     },
     {
       "date": "2026-10-17",
-      "team": "Union Berlin",
-      "opponent": "Dortmund",
-      "pred": "Loss",
-      "pickLabel": "Dortmund to win",
-      "actual": "Draw",
-      "actualLabel": "Draw",
-      "teamPosition": 17,
-      "oppPosition": 1,
+      "team": "Stuttgart",
+      "opponent": "Hamburger SV",
+      "pred": "Win",
+      "pickLabel": "Stuttgart to win",
+      "actual": "Loss",
+      "actualLabel": "Hamburger SV to win",
+      "teamPosition": 15,
+      "oppPosition": 16,
       "probs": {
-        "teamWin": 12.39,
-        "draw": 29.28,
-        "oppWin": 58.33
+        "teamWin": 49.13,
+        "draw": 29.6,
+        "oppWin": 21.28
       },
       "correct": false
     },
@@ -347,37 +500,20 @@
     },
     {
       "date": "2026-10-10",
-      "team": "RB Leipzig",
-      "opponent": "Eintracht Frankfurt",
-      "pred": "Win",
+      "team": "Eintracht Frankfurt",
+      "opponent": "RB Leipzig",
+      "pred": "Loss",
       "pickLabel": "RB Leipzig to win",
-      "actual": "Win",
+      "actual": "Loss",
       "actualLabel": "RB Leipzig to win",
-      "teamPosition": 9,
-      "oppPosition": 10,
+      "teamPosition": 6,
+      "oppPosition": 11,
       "probs": {
-        "teamWin": 56.39,
-        "draw": 28.1,
-        "oppWin": 15.51
+        "teamWin": 24.11,
+        "draw": 22.87,
+        "oppWin": 53.02
       },
       "correct": true
-    },
-    {
-      "date": "2026-10-10",
-      "team": "Bayern Munich",
-      "opponent": "Augsburg",
-      "pred": "Win",
-      "pickLabel": "Bayern Munich to win",
-      "actual": "Draw",
-      "actualLabel": "Draw",
-      "teamPosition": 2,
-      "oppPosition": 4,
-      "probs": {
-        "teamWin": 82.39,
-        "draw": 9.98,
-        "oppWin": 7.64
-      },
-      "correct": false
     },
     {
       "date": "2026-10-10",
@@ -393,6 +529,23 @@
         "teamWin": 32.89,
         "draw": 41.1,
         "oppWin": 26.01
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-10-10",
+      "team": "Hamburger SV",
+      "opponent": "Hoffenheim",
+      "pred": "Loss",
+      "pickLabel": "Hoffenheim to win",
+      "actual": "Win",
+      "actualLabel": "Hamburger SV to win",
+      "teamPosition": 16,
+      "oppPosition": 14,
+      "probs": {
+        "teamWin": 21.03,
+        "draw": 30.23,
+        "oppWin": 48.73
       },
       "correct": false
     },
@@ -432,18 +585,18 @@
     },
     {
       "date": "2026-10-10",
-      "team": "Hamburger SV",
-      "opponent": "Hoffenheim",
-      "pred": "Loss",
-      "pickLabel": "Hoffenheim to win",
-      "actual": "Win",
-      "actualLabel": "Hamburger SV to win",
-      "teamPosition": 16,
-      "oppPosition": 14,
+      "team": "Bayern Munich",
+      "opponent": "Augsburg",
+      "pred": "Win",
+      "pickLabel": "Bayern Munich to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 2,
+      "oppPosition": 4,
       "probs": {
-        "teamWin": 21.03,
-        "draw": 30.23,
-        "oppWin": 48.73
+        "teamWin": 82.39,
+        "draw": 9.98,
+        "oppWin": 7.64
       },
       "correct": false
     },
@@ -466,31 +619,31 @@
     }
   ],
   "metrics": {
-    "n": 18,
-    "accuracy": 0.5,
-    "ci95Low": 0.2903,
-    "ci95High": 0.7097
+    "n": 27,
+    "accuracy": 0.4815,
+    "ci95Low": 0.3074,
+    "ci95High": 0.6601
   },
   "confidenceTiers": [
     {
       "minTopProb": 50.0,
-      "n": 9,
-      "accuracy": 0.6667
+      "n": 16,
+      "accuracy": 0.5625
     },
     {
       "minTopProb": 55.0,
-      "n": 7,
-      "accuracy": 0.5714
+      "n": 13,
+      "accuracy": 0.4615
     },
     {
       "minTopProb": 60.0,
-      "n": 4,
+      "n": 8,
       "accuracy": 0.75
     },
     {
       "minTopProb": 65.0,
-      "n": 2,
-      "accuracy": 0.5
+      "n": 6,
+      "accuracy": 0.6667
     }
   ],
   "weeklyPerformance": [
@@ -513,6 +666,16 @@
       "accuracy": 0.5556,
       "modelStrategy": "soft_vote_val_log_loss",
       "modelLabel": "Validation-tuned soft vote"
+    },
+    {
+      "gameweek": "Matchweek 7",
+      "weekStart": "2026-10-23",
+      "seasonEnd": 2027,
+      "n": 9,
+      "correct": 4,
+      "accuracy": 0.4444,
+      "modelStrategy": "lr",
+      "modelLabel": "Logistic regression"
     }
   ],
   "modelTimeline": [
@@ -544,59 +707,59 @@
   "evaluation": {
     "testMetrics": {
       "model": "lr",
-      "accuracy": 0.48148148148148145,
-      "log_loss": 1.130210582129682,
-      "rps": 0.2238208074687336,
-      "n": 54,
-      "home_win_baseline_accuracy": 0.3888888888888889,
-      "brier": 0.6145781679513982,
+      "accuracy": 0.5238095238095238,
+      "log_loss": 1.1427536879680629,
+      "rps": 0.232737291405334,
+      "n": 63,
+      "home_win_baseline_accuracy": 0.4126984126984127,
+      "brier": 0.6360685353091299,
       "calibration": [
         {
           "low": 0.0,
           "high": 0.4,
           "n": 9,
-          "meanPredicted": 0.3687,
-          "observed": 0.1111
+          "meanPredicted": 0.3763,
+          "observed": 0.3333
         },
         {
           "low": 0.4,
           "high": 0.5,
           "n": 9,
-          "meanPredicted": 0.4589,
-          "observed": 0.3333
+          "meanPredicted": 0.4456,
+          "observed": 0.5556
         },
         {
           "low": 0.5,
           "high": 0.6,
-          "n": 13,
-          "meanPredicted": 0.5621,
-          "observed": 0.6923
+          "n": 15,
+          "meanPredicted": 0.5544,
+          "observed": 0.5333
         },
         {
           "low": 0.6,
           "high": 0.7,
-          "n": 11,
-          "meanPredicted": 0.6553,
-          "observed": 0.3636
+          "n": 18,
+          "meanPredicted": 0.6586,
+          "observed": 0.5
         },
         {
           "low": 0.7,
           "high": 1.0,
           "n": 12,
-          "meanPredicted": 0.781,
-          "observed": 0.75
+          "meanPredicted": 0.8171,
+          "observed": 0.6667
         }
       ],
       "market_baseline": {
-        "test_n": 54,
-        "n": 54,
+        "test_n": 63,
+        "n": 63,
         "coverage": 1.0,
-        "accuracy": 0.5740740740740741,
-        "log_loss": 0.9789698617380309,
-        "rps": 0.20963652993447207,
-        "model_accuracy": 0.48148148148148145,
-        "model_log_loss": 1.130210582129682,
-        "model_rps": 0.2238208074687336
+        "accuracy": 0.5555555555555556,
+        "log_loss": 0.9893766044997662,
+        "rps": 0.2130335878942784,
+        "model_accuracy": 0.5238095238095238,
+        "model_log_loss": 1.1427536879680629,
+        "model_rps": 0.232737291405334
       }
     },
     "rollingBacktest": [
@@ -604,145 +767,91 @@
         "seasonEnd": 2026,
         "n": 306,
         "accuracy": 0.5686274509803921,
-        "log_loss": 0.9442884984938832,
-        "rps": 0.18787166735273841,
+        "log_loss": 0.9430772104426612,
+        "rps": 0.1873130688499459,
         "market_accuracy": 0.5490196078431373,
         "market_log_loss": 0.9532538441548539
       },
       {
         "seasonEnd": 2027,
-        "n": 54,
-        "accuracy": 0.48148148148148145,
-        "log_loss": 1.1302105821296822,
-        "rps": 0.2238208074687336,
-        "market_accuracy": 0.5740740740740741,
-        "market_log_loss": 0.9789698617380309
+        "n": 63,
+        "accuracy": 0.5238095238095238,
+        "log_loss": 1.1427536879680629,
+        "rps": 0.23273729140533403,
+        "market_accuracy": 0.5555555555555556,
+        "market_log_loss": 0.989376604499766
       }
     ]
   },
   "confidentPicks": [
     {
-      "date": "2026-10-25",
-      "team": "Freiburg",
-      "opponent": "Bayern Munich",
+      "date": "2026-10-31",
+      "team": "Schalke 04",
+      "opponent": "RB Leipzig",
       "pred": "Loss",
-      "pickLabel": "Bayern Munich to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 3,
-      "oppPosition": 1,
-      "probs": {
-        "teamWin": 9.46,
-        "draw": 15.26,
-        "oppWin": 75.28
-      },
-      "correct": null,
-      "topProb": 75.28
-    },
-    {
-      "date": "2026-10-24",
-      "team": "RB Leipzig",
-      "opponent": "Elversberg",
-      "pred": "Win",
       "pickLabel": "RB Leipzig to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 7,
-      "oppPosition": 6,
+      "teamPosition": 16,
+      "oppPosition": 5,
       "probs": {
-        "teamWin": 69.78,
-        "draw": 17.47,
-        "oppWin": 12.74
+        "teamWin": 9.61,
+        "draw": 14.57,
+        "oppWin": 75.81
       },
       "correct": null,
-      "topProb": 69.78
+      "topProb": 75.81
     },
     {
-      "date": "2026-10-23",
-      "team": "Stuttgart",
-      "opponent": "Gladbach",
+      "date": "2026-10-31",
+      "team": "Bayern Munich",
+      "opponent": "Dortmund",
       "pred": "Win",
-      "pickLabel": "Stuttgart to win",
+      "pickLabel": "Bayern Munich to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 13,
-      "oppPosition": 18,
+      "teamPosition": 1,
+      "oppPosition": 2,
       "probs": {
-        "teamWin": 67.8,
-        "draw": 22.47,
-        "oppWin": 9.73
+        "teamWin": 69.51,
+        "draw": 19.65,
+        "oppWin": 10.83
       },
       "correct": null,
-      "topProb": 67.8
+      "topProb": 69.51
     },
     {
-      "date": "2026-10-24",
-      "team": "Dortmund",
-      "opponent": "Eintracht Frankfurt",
+      "date": "2026-10-31",
+      "team": "Leverkusen",
+      "opponent": "Stuttgart",
       "pred": "Win",
-      "pickLabel": "Dortmund to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 2,
-      "oppPosition": 11,
-      "probs": {
-        "teamWin": 66.24,
-        "draw": 22.33,
-        "oppWin": 11.43
-      },
-      "correct": null,
-      "topProb": 66.24
-    },
-    {
-      "date": "2026-10-24",
-      "team": "Union Berlin",
-      "opponent": "Augsburg",
-      "pred": "Loss",
-      "pickLabel": "Augsburg to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 17,
-      "oppPosition": 10,
-      "probs": {
-        "teamWin": 13.89,
-        "draw": 20.1,
-        "oppWin": 66.01
-      },
-      "correct": null,
-      "topProb": 66.01
-    },
-    {
-      "date": "2026-10-25",
-      "team": "Hoffenheim",
-      "opponent": "Leverkusen",
-      "pred": "Loss",
       "pickLabel": "Leverkusen to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 14,
-      "oppPosition": 4,
+      "teamPosition": 4,
+      "oppPosition": 15,
       "probs": {
-        "teamWin": 17.35,
-        "draw": 21.9,
-        "oppWin": 60.76
+        "teamWin": 58.41,
+        "draw": 23.1,
+        "oppWin": 18.49
       },
       "correct": null,
-      "topProb": 60.76
+      "topProb": 58.41
     }
   ],
   "meta": {
     "upcomingCount": 9,
     "awaitingResultCount": 0,
-    "historyCount": 18,
+    "historyCount": 27,
     "recentPreviewSize": 10,
     "historyPageSize": 20,
     "selectedModel": "lr",
     "modelLabel": "Logistic regression",
     "modelEvaluatedAt": "2026-10-18T04:21:24.582463+00:00",
-    "modelFittedAt": "2026-10-22T23:09:29.859679+00:00",
+    "modelFittedAt": "2026-10-28T15:51:44.090817+00:00",
     "modelReselectDays": 30,
-    "modelTestAccuracy": 0.48148148148148145,
-    "modelTestRps": 0.2238208074687336,
+    "modelTestAccuracy": 0.5238095238095238,
+    "modelTestRps": 0.232737291405334,
     "modelSplit": {
       "data_seasons": [
         2021,

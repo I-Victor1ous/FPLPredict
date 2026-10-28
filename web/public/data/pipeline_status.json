@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-10-22T23:23:19.175007+00:00",
+  "runAt": "2026-10-28T16:05:32.930700+00:00",
   "ok": true,
   "leagues": [
     {
@@ -7,7 +7,7 @@
       "slug": "premier-league",
       "status": "ok",
       "error": null,
-      "newestCompletedDate": "2026-10-19",
+      "newestCompletedDate": "2026-10-25",
       "xgMissingRate": 0.0,
       "upcomingFixtures": 10
     },
@@ -16,7 +16,7 @@
       "slug": "la-liga",
       "status": "ok",
       "error": null,
-      "newestCompletedDate": "2026-10-21",
+      "newestCompletedDate": "2026-10-26",
       "xgMissingRate": 0.0,
       "upcomingFixtures": 11
     },
@@ -25,7 +25,7 @@
       "slug": "bundesliga",
       "status": "ok",
       "error": null,
-      "newestCompletedDate": "2026-10-18",
+      "newestCompletedDate": "2026-10-25",
       "xgMissingRate": 0.0,
       "upcomingFixtures": 9
     },
@@ -34,16 +34,16 @@
       "slug": "serie-a",
       "status": "ok",
       "error": null,
-      "newestCompletedDate": "2026-10-19",
-      "xgMissingRate": 0.0,
-      "upcomingFixtures": 10
+      "newestCompletedDate": "2026-10-27",
+      "xgMissingRate": 0.0361,
+      "upcomingFixtures": 12
     },
     {
       "name": "Ligue 1",
       "slug": "ligue-1",
       "status": "ok",
       "error": null,
-      "newestCompletedDate": "2026-10-18",
+      "newestCompletedDate": "2026-10-26",
       "xgMissingRate": 0.0,
       "upcomingFixtures": 9
     }

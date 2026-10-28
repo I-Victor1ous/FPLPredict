@@ -1,168 +1,188 @@
 {
-  "generatedAt": "2026-10-22T23:21:34.676815+00:00",
+  "generatedAt": "2026-10-28T16:03:49.748871+00:00",
   "league": "La Liga",
   "upcoming": [
     {
-      "date": "2026-10-23",
-      "team": "Alaves",
-      "opponent": "Malaga",
-      "pred": "Win",
-      "pickLabel": "Alaves to win",
+      "date": "2026-10-30",
+      "team": "Espanyol",
+      "opponent": "Villarreal",
+      "pred": "Loss",
+      "pickLabel": "Villarreal to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 7,
-      "oppPosition": 20,
+      "teamPosition": 18,
+      "oppPosition": 10,
       "probs": {
-        "teamWin": 75.51,
-        "draw": 16.28,
-        "oppWin": 8.21
+        "teamWin": 9.31,
+        "draw": 22.74,
+        "oppWin": 67.96
       },
       "correct": null
     },
     {
-      "date": "2026-10-24",
-      "team": "Dep. La Coru\u00f1a",
+      "date": "2026-10-31",
+      "team": "Levante",
       "opponent": "Atletico Madrid",
       "pred": "Loss",
       "pickLabel": "Atletico Madrid to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 9,
+      "teamPosition": 14,
       "oppPosition": 2,
       "probs": {
-        "teamWin": 7.13,
-        "draw": 20.28,
-        "oppWin": 72.6
+        "teamWin": 16.55,
+        "draw": 17.36,
+        "oppWin": 66.09
       },
       "correct": null
     },
     {
-      "date": "2026-10-24",
-      "team": "Villarreal",
-      "opponent": "Valencia",
-      "pred": "Win",
-      "pickLabel": "Villarreal to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 12,
-      "oppPosition": 19,
-      "probs": {
-        "teamWin": 43.5,
-        "draw": 29.09,
-        "oppWin": 27.4
-      },
-      "correct": null
-    },
-    {
-      "date": "2026-10-24",
-      "team": "Espanyol",
-      "opponent": "Racing Santander",
-      "pred": "Draw",
-      "pickLabel": "Draw",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 16,
-      "oppPosition": 17,
-      "probs": {
-        "teamWin": 34.39,
-        "draw": 43.62,
-        "oppWin": 21.99
-      },
-      "correct": null
-    },
-    {
-      "date": "2026-10-24",
-      "team": "Elche",
-      "opponent": "Rayo Vallecano",
-      "pred": "Loss",
-      "pickLabel": "Rayo Vallecano to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 18,
-      "oppPosition": 14,
-      "probs": {
-        "teamWin": 9.45,
-        "draw": 28.36,
-        "oppWin": 62.19
-      },
-      "correct": null
-    },
-    {
-      "date": "2026-10-25",
-      "team": "Real Madrid",
+      "date": "2026-10-31",
+      "team": "Alaves",
       "opponent": "Barcelona",
       "pred": "Loss",
       "pickLabel": "Barcelona to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 3,
+      "teamPosition": 7,
       "oppPosition": 1,
       "probs": {
-        "teamWin": 6.99,
-        "draw": 11.35,
-        "oppWin": 81.66
+        "teamWin": 2.24,
+        "draw": 4.83,
+        "oppWin": 92.93
       },
       "correct": null
     },
     {
-      "date": "2026-10-25",
-      "team": "Getafe",
+      "date": "2026-10-31",
+      "team": "Celta Vigo",
+      "opponent": "Rayo Vallecano",
+      "pred": "Loss",
+      "pickLabel": "Rayo Vallecano to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 9,
+      "oppPosition": 16,
+      "probs": {
+        "teamWin": 18.99,
+        "draw": 29.36,
+        "oppWin": 51.66
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-10-31",
+      "team": "Malaga",
+      "opponent": "Real Betis",
+      "pred": "Loss",
+      "pickLabel": "Real Betis to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 20,
+      "oppPosition": 4,
+      "probs": {
+        "teamWin": 3.61,
+        "draw": 13.48,
+        "oppWin": 82.92
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-11-01",
+      "team": "Racing Santander",
+      "opponent": "Real Madrid",
+      "pred": "Loss",
+      "pickLabel": "Real Madrid to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 13,
+      "oppPosition": 3,
+      "probs": {
+        "teamWin": 7.91,
+        "draw": 14.63,
+        "oppWin": 77.46
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-11-01",
+      "team": "Real Sociedad",
       "opponent": "Athletic Club",
       "pred": "Loss",
       "pickLabel": "Athletic Club to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 15,
-      "oppPosition": 13,
-      "probs": {
-        "teamWin": 10.0,
-        "draw": 29.83,
-        "oppWin": 60.16
-      },
-      "correct": null
-    },
-    {
-      "date": "2026-10-25",
-      "team": "Real Sociedad",
-      "opponent": "Levante",
-      "pred": "Win",
-      "pickLabel": "Real Sociedad to win",
-      "actual": null,
-      "actualLabel": null,
       "teamPosition": 5,
-      "oppPosition": 11,
-      "probs": {
-        "teamWin": 64.41,
-        "draw": 22.04,
-        "oppWin": 13.55
-      },
-      "correct": null
-    },
-    {
-      "date": "2026-10-25",
-      "team": "Real Betis",
-      "opponent": "Celta Vigo",
-      "pred": "Win",
-      "pickLabel": "Real Betis to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 4,
       "oppPosition": 8,
       "probs": {
-        "teamWin": 48.92,
-        "draw": 27.32,
-        "oppWin": 23.76
+        "teamWin": 26.19,
+        "draw": 21.45,
+        "oppWin": 52.36
       },
       "correct": null
     },
+    {
+      "date": "2026-11-01",
+      "team": "Getafe",
+      "opponent": "Sevilla",
+      "pred": "Win",
+      "pickLabel": "Getafe to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 17,
+      "oppPosition": 6,
+      "probs": {
+        "teamWin": 37.45,
+        "draw": 29.69,
+        "oppWin": 32.86
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-11-01",
+      "team": "Elche",
+      "opponent": "Valencia",
+      "pred": "Win",
+      "pickLabel": "Elche to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 15,
+      "oppPosition": 19,
+      "probs": {
+        "teamWin": 53.5,
+        "draw": 35.19,
+        "oppWin": 11.31
+      },
+      "correct": null
+    },
+    {
+      "date": "2026-11-02",
+      "team": "Dep. La Coru\u00f1a",
+      "opponent": "Osasuna",
+      "pred": "Win",
+      "pickLabel": "Dep. La Coru\u00f1a to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 11,
+      "oppPosition": 12,
+      "probs": {
+        "teamWin": 77.42,
+        "draw": 16.66,
+        "oppWin": 5.92
+      },
+      "correct": null
+    }
+  ],
+  "awaitingResult": [],
+  "history": [
     {
       "date": "2026-10-26",
       "team": "Osasuna",
       "opponent": "Sevilla",
       "pred": "Loss",
       "pickLabel": "Sevilla to win",
-      "actual": null,
-      "actualLabel": null,
+      "actual": "Loss",
+      "actualLabel": "Sevilla to win",
       "teamPosition": 10,
       "oppPosition": 6,
       "probs": {
@@ -170,29 +190,161 @@
         "draw": 14.18,
         "oppWin": 76.33
       },
-      "correct": null
-    }
-  ],
-  "awaitingResult": [
+      "correct": true
+    },
     {
-      "date": "2026-10-10",
-      "team": "Athletic Club",
-      "opponent": "Rayo Vallecano",
-      "pred": "Win",
+      "date": "2026-10-25",
+      "team": "Getafe",
+      "opponent": "Athletic Club",
+      "pred": "Loss",
       "pickLabel": "Athletic Club to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 10,
-      "oppPosition": 12,
+      "actual": "Loss",
+      "actualLabel": "Athletic Club to win",
+      "teamPosition": 15,
+      "oppPosition": 13,
       "probs": {
-        "teamWin": 52.93,
-        "draw": 20.82,
-        "oppWin": 26.25
+        "teamWin": 10.0,
+        "draw": 29.83,
+        "oppWin": 60.16
       },
-      "correct": null
-    }
-  ],
-  "history": [
+      "correct": true
+    },
+    {
+      "date": "2026-10-25",
+      "team": "Real Madrid",
+      "opponent": "Barcelona",
+      "pred": "Loss",
+      "pickLabel": "Barcelona to win",
+      "actual": "Win",
+      "actualLabel": "Real Madrid to win",
+      "teamPosition": 3,
+      "oppPosition": 1,
+      "probs": {
+        "teamWin": 6.99,
+        "draw": 11.35,
+        "oppWin": 81.66
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-10-25",
+      "team": "Real Sociedad",
+      "opponent": "Levante",
+      "pred": "Win",
+      "pickLabel": "Real Sociedad to win",
+      "actual": "Win",
+      "actualLabel": "Real Sociedad to win",
+      "teamPosition": 5,
+      "oppPosition": 11,
+      "probs": {
+        "teamWin": 64.41,
+        "draw": 22.04,
+        "oppWin": 13.55
+      },
+      "correct": true
+    },
+    {
+      "date": "2026-10-25",
+      "team": "Real Betis",
+      "opponent": "Celta Vigo",
+      "pred": "Win",
+      "pickLabel": "Real Betis to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 4,
+      "oppPosition": 8,
+      "probs": {
+        "teamWin": 48.92,
+        "draw": 27.32,
+        "oppWin": 23.76
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-10-24",
+      "team": "Dep. La Coru\u00f1a",
+      "opponent": "Atletico Madrid",
+      "pred": "Loss",
+      "pickLabel": "Atletico Madrid to win",
+      "actual": "Loss",
+      "actualLabel": "Atletico Madrid to win",
+      "teamPosition": 9,
+      "oppPosition": 2,
+      "probs": {
+        "teamWin": 12.55,
+        "draw": 17.32,
+        "oppWin": 70.13
+      },
+      "correct": true
+    },
+    {
+      "date": "2026-10-24",
+      "team": "Elche",
+      "opponent": "Rayo Vallecano",
+      "pred": "Loss",
+      "pickLabel": "Rayo Vallecano to win",
+      "actual": "Win",
+      "actualLabel": "Elche to win",
+      "teamPosition": 18,
+      "oppPosition": 14,
+      "probs": {
+        "teamWin": 9.45,
+        "draw": 28.36,
+        "oppWin": 62.19
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-10-24",
+      "team": "Villarreal",
+      "opponent": "Valencia",
+      "pred": "Win",
+      "pickLabel": "Villarreal to win",
+      "actual": "Win",
+      "actualLabel": "Villarreal to win",
+      "teamPosition": 12,
+      "oppPosition": 19,
+      "probs": {
+        "teamWin": 43.5,
+        "draw": 29.09,
+        "oppWin": 27.4
+      },
+      "correct": true
+    },
+    {
+      "date": "2026-10-24",
+      "team": "Espanyol",
+      "opponent": "Racing Santander",
+      "pred": "Draw",
+      "pickLabel": "Draw",
+      "actual": "Loss",
+      "actualLabel": "Racing Santander to win",
+      "teamPosition": 16,
+      "oppPosition": 17,
+      "probs": {
+        "teamWin": 34.39,
+        "draw": 43.62,
+        "oppWin": 21.99
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-10-23",
+      "team": "Alaves",
+      "opponent": "Malaga",
+      "pred": "Win",
+      "pickLabel": "Alaves to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 7,
+      "oppPosition": 20,
+      "probs": {
+        "teamWin": 75.51,
+        "draw": 16.28,
+        "oppWin": 8.21
+      },
+      "correct": false
+    },
     {
       "date": "2026-10-21",
       "team": "Levante",
@@ -297,23 +449,6 @@
     },
     {
       "date": "2026-10-17",
-      "team": "Villarreal",
-      "opponent": "Elche",
-      "pred": "Win",
-      "pickLabel": "Villarreal to win",
-      "actual": "Draw",
-      "actualLabel": "Draw",
-      "teamPosition": 11,
-      "oppPosition": 18,
-      "probs": {
-        "teamWin": 71.13,
-        "draw": 21.9,
-        "oppWin": 6.96
-      },
-      "correct": false
-    },
-    {
-      "date": "2026-10-17",
       "team": "Atletico Madrid",
       "opponent": "Espanyol",
       "pred": "Win",
@@ -326,23 +461,6 @@
         "teamWin": 63.33,
         "draw": 22.81,
         "oppWin": 13.86
-      },
-      "correct": true
-    },
-    {
-      "date": "2026-10-17",
-      "team": "Real Betis",
-      "opponent": "Barcelona",
-      "pred": "Loss",
-      "pickLabel": "Barcelona to win",
-      "actual": "Loss",
-      "actualLabel": "Barcelona to win",
-      "teamPosition": 3,
-      "oppPosition": 1,
-      "probs": {
-        "teamWin": 22.56,
-        "draw": 15.68,
-        "oppWin": 61.75
       },
       "correct": true
     },
@@ -362,6 +480,40 @@
         "oppWin": 28.86
       },
       "correct": false
+    },
+    {
+      "date": "2026-10-17",
+      "team": "Villarreal",
+      "opponent": "Elche",
+      "pred": "Win",
+      "pickLabel": "Villarreal to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 11,
+      "oppPosition": 18,
+      "probs": {
+        "teamWin": 71.13,
+        "draw": 21.9,
+        "oppWin": 6.96
+      },
+      "correct": false
+    },
+    {
+      "date": "2026-10-17",
+      "team": "Real Betis",
+      "opponent": "Barcelona",
+      "pred": "Loss",
+      "pickLabel": "Barcelona to win",
+      "actual": "Loss",
+      "actualLabel": "Barcelona to win",
+      "teamPosition": 3,
+      "oppPosition": 1,
+      "probs": {
+        "teamWin": 22.56,
+        "draw": 15.68,
+        "oppWin": 61.75
+      },
+      "correct": true
     },
     {
       "date": "2026-10-16",
@@ -467,18 +619,18 @@
     },
     {
       "date": "2026-10-10",
-      "team": "Atletico Madrid",
-      "opponent": "Alaves",
-      "pred": "Win",
+      "team": "Alaves",
+      "opponent": "Atletico Madrid",
+      "pred": "Loss",
       "pickLabel": "Atletico Madrid to win",
-      "actual": "Win",
+      "actual": "Loss",
       "actualLabel": "Atletico Madrid to win",
       "teamPosition": null,
       "oppPosition": null,
       "probs": {
-        "teamWin": 58.66,
-        "draw": 23.16,
-        "oppWin": 18.18
+        "teamWin": 17.43,
+        "draw": 25.59,
+        "oppWin": 56.98
       },
       "correct": true
     },
@@ -535,30 +687,30 @@
     }
   ],
   "metrics": {
-    "n": 20,
-    "accuracy": 0.65,
-    "ci95Low": 0.4329,
-    "ci95High": 0.8188
+    "n": 30,
+    "accuracy": 0.6,
+    "ci95Low": 0.4232,
+    "ci95High": 0.7541
   },
   "confidenceTiers": [
     {
       "minTopProb": 50.0,
-      "n": 9,
-      "accuracy": 0.7778
+      "n": 16,
+      "accuracy": 0.6875
     },
     {
       "minTopProb": 55.0,
-      "n": 9,
-      "accuracy": 0.7778
+      "n": 16,
+      "accuracy": 0.6875
     },
     {
       "minTopProb": 60.0,
-      "n": 7,
-      "accuracy": 0.7143
+      "n": 14,
+      "accuracy": 0.6429
     },
     {
       "minTopProb": 65.0,
-      "n": 2,
+      "n": 6,
       "accuracy": 0.5
     }
   ],
@@ -590,6 +742,16 @@
       "n": 10,
       "correct": 7,
       "accuracy": 0.7,
+      "modelStrategy": "soft_vote_val_log_loss",
+      "modelLabel": "Validation-tuned soft vote"
+    },
+    {
+      "gameweek": "Matchweek 10",
+      "weekStart": "2026-10-23",
+      "seasonEnd": 2027,
+      "n": 10,
+      "correct": 5,
+      "accuracy": 0.5,
       "modelStrategy": "soft_vote_val_log_loss",
       "modelLabel": "Validation-tuned soft vote"
     }
@@ -629,223 +791,205 @@
   "evaluation": {
     "testMetrics": {
       "model": "soft_vote_val_log_loss",
-      "accuracy": 0.550561797752809,
-      "log_loss": 0.8729929341902621,
-      "rps": 0.1625180776122679,
-      "n": 89,
-      "home_win_baseline_accuracy": 0.33707865168539325,
-      "brier": 0.5110240211331477,
+      "accuracy": 0.5151515151515151,
+      "log_loss": 0.9403834776192674,
+      "rps": 0.182390174910051,
+      "n": 99,
+      "home_win_baseline_accuracy": 0.3333333333333333,
+      "brier": 0.5529097440589362,
       "calibration": [
         {
           "low": 0.0,
           "high": 0.4,
-          "n": 12,
-          "meanPredicted": 0.3814,
-          "observed": 0.25
+          "n": 15,
+          "meanPredicted": 0.3741,
+          "observed": 0.2667
         },
         {
           "low": 0.4,
           "high": 0.5,
-          "n": 25,
-          "meanPredicted": 0.4428,
-          "observed": 0.32
+          "n": 27,
+          "meanPredicted": 0.444,
+          "observed": 0.2963
         },
         {
           "low": 0.5,
           "high": 0.6,
-          "n": 21,
-          "meanPredicted": 0.5513,
-          "observed": 0.5238
+          "n": 19,
+          "meanPredicted": 0.5517,
+          "observed": 0.6316
         },
         {
           "low": 0.6,
           "high": 0.7,
-          "n": 13,
-          "meanPredicted": 0.652,
-          "observed": 0.8462
+          "n": 14,
+          "meanPredicted": 0.6522,
+          "observed": 0.4286
         },
         {
           "low": 0.7,
           "high": 1.0,
-          "n": 18,
-          "meanPredicted": 0.8141,
-          "observed": 0.8889
+          "n": 24,
+          "meanPredicted": 0.7898,
+          "observed": 0.875
         }
       ],
       "market_baseline": {
-        "test_n": 89,
-        "n": 89,
+        "test_n": 99,
+        "n": 99,
         "coverage": 1.0,
-        "accuracy": 0.550561797752809,
-        "log_loss": 0.9283941253300542,
-        "rps": 0.1795459360800301,
-        "model_accuracy": 0.550561797752809,
-        "model_log_loss": 0.8729929341902621,
-        "model_rps": 0.1625180776122679
+        "accuracy": 0.5555555555555556,
+        "log_loss": 0.930274585091425,
+        "rps": 0.18228648152976637,
+        "model_accuracy": 0.5151515151515151,
+        "model_log_loss": 0.9403834776192674,
+        "model_rps": 0.182390174910051
       }
     },
     "rollingBacktest": [
       {
         "seasonEnd": 2026,
         "n": 380,
-        "accuracy": 0.5394736842105263,
-        "log_loss": 0.986145061264302,
-        "rps": 0.20188853667687995,
+        "accuracy": 0.531578947368421,
+        "log_loss": 0.979458341447581,
+        "rps": 0.20080357669002727,
         "market_accuracy": 0.5447368421052632,
         "market_log_loss": 0.9641034157339412
       },
       {
         "seasonEnd": 2027,
-        "n": 89,
-        "accuracy": 0.550561797752809,
-        "log_loss": 0.8729929341902621,
-        "rps": 0.16251807761226794,
-        "market_accuracy": 0.550561797752809,
-        "market_log_loss": 0.9283941253300539
+        "n": 99,
+        "accuracy": 0.5151515151515151,
+        "log_loss": 0.9403834776192673,
+        "rps": 0.182390174910051,
+        "market_accuracy": 0.5555555555555556,
+        "market_log_loss": 0.930274585091425
       }
     ]
   },
   "confidentPicks": [
     {
-      "date": "2026-10-25",
-      "team": "Real Madrid",
+      "date": "2026-10-31",
+      "team": "Alaves",
       "opponent": "Barcelona",
       "pred": "Loss",
       "pickLabel": "Barcelona to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 3,
+      "teamPosition": 7,
       "oppPosition": 1,
       "probs": {
-        "teamWin": 6.99,
-        "draw": 11.35,
-        "oppWin": 81.66
+        "teamWin": 2.24,
+        "draw": 4.83,
+        "oppWin": 92.93
       },
       "correct": null,
-      "topProb": 81.66
+      "topProb": 92.93
     },
     {
-      "date": "2026-10-26",
-      "team": "Osasuna",
-      "opponent": "Sevilla",
+      "date": "2026-10-31",
+      "team": "Malaga",
+      "opponent": "Real Betis",
       "pred": "Loss",
-      "pickLabel": "Sevilla to win",
+      "pickLabel": "Real Betis to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 10,
-      "oppPosition": 6,
+      "teamPosition": 20,
+      "oppPosition": 4,
       "probs": {
-        "teamWin": 9.49,
-        "draw": 14.18,
-        "oppWin": 76.33
+        "teamWin": 3.61,
+        "draw": 13.48,
+        "oppWin": 82.92
       },
       "correct": null,
-      "topProb": 76.33
+      "topProb": 82.92
     },
     {
-      "date": "2026-10-23",
-      "team": "Alaves",
-      "opponent": "Malaga",
-      "pred": "Win",
-      "pickLabel": "Alaves to win",
+      "date": "2026-11-01",
+      "team": "Racing Santander",
+      "opponent": "Real Madrid",
+      "pred": "Loss",
+      "pickLabel": "Real Madrid to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 7,
-      "oppPosition": 20,
+      "teamPosition": 13,
+      "oppPosition": 3,
       "probs": {
-        "teamWin": 75.51,
-        "draw": 16.28,
-        "oppWin": 8.21
+        "teamWin": 7.91,
+        "draw": 14.63,
+        "oppWin": 77.46
       },
       "correct": null,
-      "topProb": 75.51
+      "topProb": 77.46
     },
     {
-      "date": "2026-10-24",
+      "date": "2026-11-02",
       "team": "Dep. La Coru\u00f1a",
+      "opponent": "Osasuna",
+      "pred": "Win",
+      "pickLabel": "Dep. La Coru\u00f1a to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 11,
+      "oppPosition": 12,
+      "probs": {
+        "teamWin": 77.42,
+        "draw": 16.66,
+        "oppWin": 5.92
+      },
+      "correct": null,
+      "topProb": 77.42
+    },
+    {
+      "date": "2026-10-30",
+      "team": "Espanyol",
+      "opponent": "Villarreal",
+      "pred": "Loss",
+      "pickLabel": "Villarreal to win",
+      "actual": null,
+      "actualLabel": null,
+      "teamPosition": 18,
+      "oppPosition": 10,
+      "probs": {
+        "teamWin": 9.31,
+        "draw": 22.74,
+        "oppWin": 67.96
+      },
+      "correct": null,
+      "topProb": 67.96
+    },
+    {
+      "date": "2026-10-31",
+      "team": "Levante",
       "opponent": "Atletico Madrid",
       "pred": "Loss",
       "pickLabel": "Atletico Madrid to win",
       "actual": null,
       "actualLabel": null,
-      "teamPosition": 9,
+      "teamPosition": 14,
       "oppPosition": 2,
       "probs": {
-        "teamWin": 7.13,
-        "draw": 20.28,
-        "oppWin": 72.6
+        "teamWin": 16.55,
+        "draw": 17.36,
+        "oppWin": 66.09
       },
       "correct": null,
-      "topProb": 72.6
-    },
-    {
-      "date": "2026-10-25",
-      "team": "Real Sociedad",
-      "opponent": "Levante",
-      "pred": "Win",
-      "pickLabel": "Real Sociedad to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 5,
-      "oppPosition": 11,
-      "probs": {
-        "teamWin": 64.41,
-        "draw": 22.04,
-        "oppWin": 13.55
-      },
-      "correct": null,
-      "topProb": 64.41
-    },
-    {
-      "date": "2026-10-24",
-      "team": "Elche",
-      "opponent": "Rayo Vallecano",
-      "pred": "Loss",
-      "pickLabel": "Rayo Vallecano to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 18,
-      "oppPosition": 14,
-      "probs": {
-        "teamWin": 9.45,
-        "draw": 28.36,
-        "oppWin": 62.19
-      },
-      "correct": null,
-      "topProb": 62.19
-    },
-    {
-      "date": "2026-10-25",
-      "team": "Getafe",
-      "opponent": "Athletic Club",
-      "pred": "Loss",
-      "pickLabel": "Athletic Club to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 15,
-      "oppPosition": 13,
-      "probs": {
-        "teamWin": 10.0,
-        "draw": 29.83,
-        "oppWin": 60.16
-      },
-      "correct": null,
-      "topProb": 60.16
+      "topProb": 66.09
     }
   ],
   "meta": {
     "upcomingCount": 10,
-    "awaitingResultCount": 1,
-    "historyCount": 20,
+    "awaitingResultCount": 0,
+    "historyCount": 30,
     "recentPreviewSize": 10,
     "historyPageSize": 20,
     "selectedModel": "soft_vote_val_log_loss",
     "modelLabel": "Validation-tuned soft vote",
     "modelEvaluatedAt": "2026-10-18T04:20:14.206686+00:00",
-    "modelFittedAt": "2026-10-22T23:08:59.129951+00:00",
+    "modelFittedAt": "2026-10-28T15:51:13.322603+00:00",
     "modelReselectDays": 30,
-    "modelTestAccuracy": 0.550561797752809,
-    "modelTestRps": 0.1625180776122679,
+    "modelTestAccuracy": 0.5151515151515151,
+    "modelTestRps": 0.182390174910051,
     "modelSplit": {
       "data_seasons": [
         2021,
