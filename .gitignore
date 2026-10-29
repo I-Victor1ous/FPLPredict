@@ -15,3 +15,8 @@ new.csv
 check
 
 node_modules/
+web/.next/
+artifacts/**/*.joblib
+outputs/predictions-log-test-league.jsonl
+data/*
+artifacts/*

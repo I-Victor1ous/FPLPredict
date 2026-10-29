@@ -2,6 +2,8 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
 
+import { ThemeInit } from "@/components/ThemeInit";
+
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -16,8 +18,8 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "FPLPredict — Match Outcomes",
-    template: "FPLPredict — %s",
+    default: "Football Predict — Match Outcomes",
+    template: "Football Predict — %s",
   },
   description: "Win / draw / loss probabilities from rolling form and rating features.",
 };
@@ -28,8 +30,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${jetbrains.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${jetbrains.variable}`} data-theme="dark">
       <body className={`${dmSans.className} ${jetbrains.variable}`}>
+        <ThemeInit />
         {children}
         <Analytics />
       </body>

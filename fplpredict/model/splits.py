@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import timezone
 
 import pandas as pd
 
@@ -46,11 +46,14 @@ def restrict_last_n_seasons(
     df: pd.DataFrame, n: int = MODEL_DATA_SEASONS, column: str = "Season"
 ) -> pd.DataFrame:
     seasons = sorted_seasons(df, column)
-    if len(seasons) < n:
+    min_needed = VAL_SEASON_COUNT + TEST_SEASON_COUNT + 1
+    if len(seasons) < min_needed:
         raise RuntimeError(
-            f"Need at least {n} seasons for modeling; found {len(seasons)}: {seasons}"
+            f"Need at least {min_needed} seasons for modeling; "
+            f"found {len(seasons)}: {seasons}"
         )
-    keep = set(seasons[-n:])
+    n_eff = min(n, len(seasons))
+    keep = set(seasons[-n_eff:])
     return df[df[column].isin(keep)].copy()
 
 
@@ -74,12 +77,13 @@ def season_holdout_frames(
 
     ``past_matches`` must already be completed-only rows with a ``Season`` column.
     """
-    window, n_train, _, _ = modeling_season_counts()
+    window, n_train, n_val, n_test = modeling_season_counts()
     scoped = restrict_last_n_seasons(past_matches, window)
     seasons = tuple(sorted_seasons(scoped))
+    n_train = min(n_train, len(seasons) - n_val - n_test)
     train_seasons = seasons[:n_train]
     val_season = seasons[n_train]
-    test_season = seasons[n_train + 1]
+    test_season = seasons[n_train + n_val]
     meta = SeasonSplitMeta(
         all_seasons=seasons,
         train_seasons=train_seasons,

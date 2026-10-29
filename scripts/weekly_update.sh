@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Weekly FPLPredict update (WSL/Linux cron or manual run).
 # - Scrape + predict + export JSON every run (see install_cron.sh for Sunday 20:00).
-# - Model strategy is re-compared about monthly (FPL_MODEL_RESELECT_DAYS, default 30).
+# - Refit cached strategy every run; strategy comparison monthly (FPL_MODEL_RESELECT_DAYS, default 30).
 # - Force reselection: ./scripts/weekly_update.sh --force-model-reselect
 set -euo pipefail
 

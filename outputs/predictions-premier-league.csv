@@ -1,72 +1,111 @@
-,Date,Team_position,Team,Pred,Opponent,Opp_position,Team_win%,Opp_win%,Draw%,Actual
-0,2026-10-12,9.0,Newcastle United,Draw,Coventry City,18.0,33.8,30.07,36.13,
-1,2026-10-12,18.0,Coventry City,Win,Newcastle United,0.0,51.38,22.61,26.0,
-2,2026-10-11,6.0,Liverpool,Win,Manchester City,1.0,51.49,19.81,28.71,
-3,2026-10-11,15.0,Crystal Palace,Draw,Nottingham Forest,0.0,32.41,31.87,35.71,
-4,2026-10-11,13.0,Nottingham Forest,Draw,Crystal Palace,15.0,22.54,30.49,46.97,
-5,2026-10-11,8.0,Hull City,Draw,Everton,7.0,26.56,33.19,40.25,
-6,2026-10-11,7.0,Everton,Win,Hull City,8.0,45.57,25.33,29.1,
-7,2026-10-11,1.0,Manchester City,Loss,Liverpool,6.0,38.34,38.91,22.75,
-8,2026-10-10,2.0,Arsenal,Win,Leeds United,5.0,60.6,11.97,27.43,
-9,2026-10-10,19.0,Fulham,Win,Ipswich Town,11.0,56.63,18.42,24.94,
-10,2026-10-10,14.0,Sunderland,Draw,Brighton and Hove Albion,3.0,26.83,32.04,41.12,
-11,2026-10-10,16.0,Aston Villa,Draw,Brentford,4.0,34.14,22.33,43.53,
-12,2026-10-10,12.0,Manchester United,Win,Tottenham Hotspur,0.0,48.11,13.91,37.98,
-13,2026-10-10,5.0,Leeds United,Loss,Arsenal,2.0,11.13,50.35,38.52,
-14,2026-10-10,10.0,Chelsea,Loss,Bournemouth,17.0,28.12,37.92,33.96,
-15,2026-10-10,17.0,Bournemouth,Draw,Chelsea,10.0,23.85,33.24,42.92,
-16,2026-10-10,20.0,Tottenham Hotspur,Loss,Manchester United,12.0,18.21,51.1,30.69,
-17,2026-10-10,3.0,Brighton and Hove Albion,Win,Sunderland,14.0,54.25,24.01,21.74,
-18,2026-10-10,11.0,Ipswich Town,Draw,Fulham,19.0,18.42,30.89,50.69,
-19,2026-02-11,9.0,Nottingham Forest,Win,Wolverhampton Wanderers,0.0,63.98,15.24,20.78,Draw
-20,2026-02-10,18.0,Leeds United,Draw,Chelsea,5.0,31.44,30.99,37.57,Draw
-21,2026-02-08,7.0,Liverpool,Draw,Manchester City,10.0,38.2,18.92,42.88,Loss
-22,2026-02-08,15.0,Brighton and Hove Albion,Draw,Crystal Palace,17.0,34.73,22.98,42.29,Loss
-23,2026-02-07,11.0,Brentford,Win,Newcastle United,1.0,58.06,17.65,24.28,Win
-24,2026-02-07,5.0,Chelsea,Win,Wolverhampton Wanderers,0.0,79.21,6.86,13.93,Win
-25,2026-02-07,16.0,Bournemouth,Draw,Aston Villa,12.0,23.51,33.84,42.65,Draw
-26,2026-02-07,6.0,West Ham United,Draw,Burnley,19.0,41.97,13.84,44.19,Win
-27,2026-02-07,13.0,Manchester United,Win,Tottenham Hotspur,2.0,42.27,21.24,36.5,Win
-28,2026-02-07,4.0,Sunderland,Loss,Arsenal,3.0,23.11,43.43,33.46,Loss
-29,2026-02-07,8.0,Fulham,Draw,Everton,14.0,23.7,21.49,54.81,Loss
-30,2026-02-07,20.0,Nottingham Forest,Draw,Chelsea,5.0,21.51,34.2,44.3,
-31,2025-10-20,16.0,Brentford,Win,West Ham United,19.0,50.96,19.73,29.32,Win
-32,2025-10-19,2.0,Liverpool,Win,Manchester United,10.0,53.27,21.55,25.18,Loss
-33,2025-10-19,3.0,Tottenham Hotspur,Loss,Aston Villa,13.0,27.07,41.26,31.68,Loss
-34,2025-10-18,15.0,Leeds United,Win,Burnley,18.0,42.02,21.97,36.01,
-35,2025-10-18,11.0,Newcastle United,Win,Brighton and Hove Albion,12.0,34.12,32.08,33.8,
-36,2025-10-18,1.0,Arsenal,Win,Fulham,14.0,52.46,22.7,24.84,
-37,2025-10-18,4.0,Bournemouth,Loss,Crystal Palace,6.0,24.84,46.68,28.48,
-38,2025-10-18,9.0,Sunderland,Win,Wolverhampton Wanderers,20.0,39.88,22.18,37.94,Win
-39,2025-10-18,17.0,Nottingham Forest,Loss,Chelsea,7.0,33.48,40.59,25.92,Loss
-40,2025-10-18,5.0,Manchester City,Win,Everton,8.0,53.83,18.55,27.62,Win
-41,2025-10-05,17.0,Nottingham Forest,Draw,Newcastle United,15.0,26.84,31.21,41.95,Loss
-42,2025-10-05,10.0,Brighton and Hove Albion,Win,Wolverhampton Wanderers,20.0,51.44,22.46,26.11,Draw
-43,2025-10-05,13.0,Brentford,Loss,Manchester City,7.0,10.19,72.68,17.14,Loss
-44,2025-10-05,9.0,Everton,Win,Crystal Palace,3.0,41.39,39.43,19.19,Win
-45,2025-10-05,16.0,Aston Villa,Win,Burnley,18.0,50.38,26.2,23.42,Win
-46,2025-10-04,19.0,West Ham United,Loss,Arsenal,2.0,14.55,64.99,20.46,Loss
-47,2025-10-04,4.0,Tottenham Hotspur,Win,Leeds United,12.0,38.82,35.93,25.25,Win
-48,2025-10-04,8.0,Chelsea,Loss,Liverpool,1.0,17.31,67.02,15.67,Win
-49,2025-10-04,14.0,Manchester United,Win,Sunderland,5.0,49.19,18.93,31.87,Win
-50,2025-10-03,6.0,Bournemouth,Win,Fulham,11.0,52.01,12.55,35.44,Win
-51,2025-09-29,10.0,Everton,Win,West Ham United,19.0,41.39,19.0,39.61,Draw
-52,2025-09-28,18.0,Aston Villa,Draw,Fulham,8.0,32.96,33.02,34.02,Win
-53,2025-09-28,13.0,Newcastle United,Loss,Arsenal,2.0,16.46,42.19,41.35,Loss
-54,2025-09-27,7.0,Sunderland,Win,Nottingham Forest,15.0,34.34,32.68,32.98,Win
-55,2025-09-27,11.0,Manchester United,Win,Brentford,17.0,39.14,25.63,35.23,Loss
-56,2025-09-27,3.0,Tottenham Hotspur,Win,Wolverhampton Wanderers,20.0,42.04,17.08,40.88,Draw
-57,2025-09-27,4.0,Bournemouth,Win,Leeds United,12.0,52.19,17.57,30.23,Draw
-58,2025-09-27,6.0,Chelsea,Win,Brighton and Hove Albion,14.0,49.46,14.14,36.4,Loss
-59,2025-09-27,1.0,Liverpool,Win,Crystal Palace,5.0,41.7,29.13,29.16,Loss
-60,2025-09-27,16.0,Burnley,Loss,Manchester City,9.0,6.84,73.05,20.12,Loss
-61,2025-09-21,2.0,Arsenal,Win,Manchester City,8.0,49.4,23.41,27.19,Draw
-62,2025-09-21,19.0,Aston Villa,Draw,Sunderland,7.0,32.78,33.31,33.91,Draw
-63,2025-09-21,10.0,Newcastle United,Loss,Bournemouth,4.0,23.27,48.09,28.64,Draw
-64,2025-09-20,17.0,Burnley,Draw,Nottingham Forest,15.0,23.84,35.96,40.2,Draw
-65,2025-09-20,16.0,Leeds United,Loss,Wolverhampton Wanderers,20.0,30.2,43.73,26.07,Win
-66,2025-09-20,11.0,Fulham,Draw,Brentford,12.0,30.99,26.76,42.24,Win
-67,2025-09-20,6.0,Everton,Loss,Liverpool,1.0,16.25,55.95,27.8,Loss
-68,2025-09-20,5.0,Chelsea,Win,Manchester United,14.0,39.61,27.99,32.4,Loss
-69,2025-09-20,3.0,Tottenham Hotspur,Loss,Brighton and Hove Albion,13.0,28.35,42.49,29.16,Draw
-70,2025-09-20,9.0,Crystal Palace,Win,West Ham United,18.0,50.25,18.2,31.54,Win
+,Date,Team_position,Team,Pred,Opponent,Opp_position,Team_win%,Opp_win%,Draw%,Model_strategy,Model_evaluated_at,Predicted_at,Actual
+0,2026-11-02,11.0,Everton,Loss,Newcastle United,8.0,30.44,39.26,30.3,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.567380+00:00,
+1,2026-11-01,2.0,Arsenal,Win,Liverpool,4.0,37.96,36.85,25.18,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.567132+00:00,
+2,2026-10-31,15.0,Fulham,Loss,Aston Villa,9.0,20.21,57.09,22.7,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.564558+00:00,
+3,2026-10-31,20.0,Sunderland,Loss,Coventry City,19.0,24.17,46.83,29.0,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.564984+00:00,
+4,2026-10-31,6.0,Brentford,Win,Nottingham Forest,18.0,42.37,36.95,20.69,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.565384+00:00,
+5,2026-10-31,5.0,Chelsea,Win,Manchester United,16.0,51.8,26.11,22.09,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.565665+00:00,
+6,2026-10-31,7.0,Leeds United,Win,Bournemouth,13.0,36.86,33.36,29.78,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.566061+00:00,
+7,2026-10-31,1.0,Manchester City,Win,Brighton and Hove Albion,3.0,55.44,22.37,22.19,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.566356+00:00,
+8,2026-10-31,17.0,Crystal Palace,Loss,Tottenham Hotspur,14.0,20.83,53.92,25.25,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.566618+00:00,
+9,2026-10-31,12.0,Ipswich Town,Loss,Hull City,10.0,14.34,61.09,24.57,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-28T15:50:32.566882+00:00,
+10,2026-10-25,20.0,Sunderland,Loss,Leeds United,7.0,28.34,54.68,16.98,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Draw
+11,2026-10-25,15.0,Bournemouth,Loss,Manchester United,13.0,27.75,49.41,22.84,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Win
+12,2026-10-25,6.0,Brentford,Win,Hull City,9.0,58.53,26.41,15.05,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Draw
+13,2026-10-25,3.0,Brighton and Hove Albion,Win,Liverpool,5.0,57.36,22.52,20.12,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Loss
+14,2026-10-25,11.0,Newcastle United,Win,Crystal Palace,14.0,59.25,25.52,15.23,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Win
+15,2026-10-24,18.0,Fulham,Loss,Coventry City,17.0,25.49,46.17,28.34,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Win
+16,2026-10-24,2.0,Arsenal,Win,Everton,8.0,65.18,14.18,20.64,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Win
+17,2026-10-24,16.0,Tottenham Hotspur,Loss,Chelsea,4.0,24.01,56.98,19.01,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Win
+18,2026-10-24,1.0,Manchester City,Win,Aston Villa,12.0,61.06,22.0,16.94,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Loss
+19,2026-10-23,10.0,Ipswich Town,Loss,Nottingham Forest,19.0,35.95,44.93,19.13,soft_vote_val_log_loss,2026-10-18T04:18:56.308876+00:00,2026-10-22T18:54:05.515572+00:00,Draw
+20,2026-10-19,20.0,Tottenham Hotspur,Win,Coventry City,18.0,46.25,29.57,24.18,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Win
+21,2026-10-19,14.0,Coventry City,Loss,Tottenham Hotspur,19.0,23.82,52.25,23.93,lr,2026-10-16T14:51:46.734876+00:00,2026-10-17T18:25:48.323251+00:00,Loss
+22,2026-10-18,13.0,Manchester United,Win,Leeds United,7.0,52.01,25.68,22.31,lr,2026-10-16T14:51:46.734876+00:00,2026-10-16T14:51:46.793665+00:00,Draw
+23,2026-10-18,2.0,Arsenal,Win,Nottingham Forest,15.0,40.26,37.95,21.8,lr,2026-10-16T14:51:46.734876+00:00,2026-10-16T14:51:46.793665+00:00,Win
+24,2026-10-18,17.0,Bournemouth,Win,Sunderland,14.0,52.51,20.86,26.63,lr,2026-10-16T14:51:46.734876+00:00,2026-10-16T14:51:46.793665+00:00,Win
+25,2026-10-18,15.0,Nottingham Forest,Loss,Arsenal,2.0,24.77,50.51,24.73,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Loss
+26,2026-10-18,17.0,Sunderland,Loss,Bournemouth,18.0,21.55,52.06,26.39,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Loss
+27,2026-10-18,12.0,Crystal Palace,Loss,Brighton and Hove Albion,3.0,10.14,66.56,23.3,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Loss
+28,2026-10-18,7.0,Leeds United,Loss,Manchester United,13.0,34.49,35.21,30.3,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Draw
+29,2026-10-17,8.0,Hull City,Loss,Fulham,20.0,29.06,49.52,21.42,lr,2026-10-16T14:51:46.734876+00:00,2026-10-17T18:25:48.323251+00:00,Loss
+30,2026-10-17,1.0,Manchester City,Win,Ipswich Town,10.0,72.93,6.25,20.83,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Win
+31,2026-10-17,4.0,Brentford,Draw,Liverpool,9.0,39.71,19.73,40.55,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Loss
+32,2026-10-17,7.0,Everton,Win,Chelsea,10.0,48.26,31.26,20.47,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Loss
+33,2026-10-17,19.0,Fulham,Loss,Hull City,8.0,28.72,39.29,31.99,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Win
+34,2026-10-17,11.0,Newcastle United,Win,Aston Villa,16.0,39.18,31.25,29.57,soft_vote_val_log_loss,2026-10-10T10:09:57.265871+00:00,2026-10-14T15:42:52.983090+00:00,Loss
+35,2026-10-17,11.0,Ipswich Town,Loss,Manchester City,1.0,4.45,77.45,18.1,lr,2026-10-16T14:51:46.734876+00:00,2026-10-16T14:51:46.793665+00:00,Loss
+36,2026-10-17,6.0,Liverpool,Loss,Brentford,4.0,27.66,44.62,27.72,lr,2026-10-16T14:51:46.734876+00:00,2026-10-16T14:51:46.793665+00:00,Win
+37,2026-10-17,6.0,Chelsea,Loss,Everton,5.0,28.25,45.26,26.48,lr,2026-10-16T14:51:46.734876+00:00,2026-10-17T18:25:48.323251+00:00,Win
+38,2026-10-12,18.0,Coventry City,Loss,Newcastle United,9.0,23.43,43.74,32.83,soft_vote_val_log_loss,2026-10-05T13:13:24.238367+00:00,2026-10-05T13:13:24.297996+00:00,Win
+39,2026-10-12,9.0,Newcastle United,Win,Coventry City,15.0,45.56,27.35,27.09,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Loss
+40,2026-10-11,7.0,Liverpool,Loss,Manchester City,1.0,13.25,54.23,32.52,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Loss
+41,2026-10-11,13.0,Nottingham Forest,Win,Crystal Palace,15.0,43.69,23.75,32.56,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Loss
+42,2026-10-11,12.0,Hull City,Loss,Everton,4.0,20.85,50.15,29.0,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Draw
+43,2026-10-11,1.0,Manchester City,Win,Liverpool,6.0,49.54,13.79,36.67,soft_vote_val_log_loss,2026-10-05T13:13:24.238367+00:00,2026-10-05T13:13:24.297996+00:00,Win
+44,2026-10-11,13.0,Crystal Palace,Loss,Nottingham Forest,15.0,17.84,50.01,32.14,soft_vote_val_log_loss,2026-10-05T13:13:24.238367+00:00,2026-10-05T13:13:24.297996+00:00,Win
+45,2026-10-11,7.0,Everton,Draw,Hull City,8.0,33.27,24.75,41.99,soft_vote_val_log_loss,2026-10-06T05:25:00.600404+00:00,2026-10-06T05:25:00.662097+00:00,Draw
+46,2026-10-10,14.0,Fulham,Win,Ipswich Town,,76.04,10.02,13.95,soft_vote_val_log_loss,2026-10-05T13:13:24.238367+00:00,2026-10-05T13:13:24.297996+00:00,Loss
+47,2026-10-10,17.0,Bournemouth,Loss,Chelsea,10.0,29.04,45.21,25.75,soft_vote_val_log_loss,2026-10-05T13:13:24.238367+00:00,2026-10-05T13:13:24.297996+00:00,Loss
+48,2026-10-10,14.0,Sunderland,Loss,Brighton and Hove Albion,3.0,13.33,54.46,32.21,soft_vote_val_log_loss,2026-10-06T05:25:00.600404+00:00,2026-10-06T06:14:33.651477+00:00,Loss
+49,2026-10-10,12.0,Manchester United,Win,Tottenham Hotspur,20.0,65.25,10.87,23.88,soft_vote_val_log_loss,2026-10-06T05:25:00.600404+00:00,2026-10-06T06:14:33.651477+00:00,Draw
+50,2026-10-10,5.0,Leeds United,Loss,Arsenal,2.0,13.55,67.87,18.58,soft_vote_val_log_loss,2026-10-05T13:13:24.238367+00:00,2026-10-05T13:13:24.297996+00:00,Loss
+51,2026-10-10,4.0,Brentford,Win,Aston Villa,16.0,37.68,33.22,29.11,soft_vote_val_log_loss,2026-10-05T13:13:24.238367+00:00,2026-10-05T13:13:24.305916+00:00,Draw
+52,2026-10-10,11.0,Ipswich Town,Loss,Fulham,19.0,22.37,44.4,33.24,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Win
+53,2026-10-10,15.0,Tottenham Hotspur,Loss,Manchester United,12.0,16.33,52.64,31.03,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Draw
+54,2026-10-10,2.0,Arsenal,Win,Leeds United,,52.84,19.95,27.2,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Win
+55,2026-10-10,11.0,Aston Villa,Loss,Brentford,3.0,17.6,52.05,30.35,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Draw
+56,2026-10-10,4.0,Brighton and Hove Albion,Win,Sunderland,9.0,36.81,26.59,36.6,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Win
+57,2026-10-10,6.0,Chelsea,Loss,Bournemouth,13.0,24.69,42.78,32.53,lr,2026-09-30T12:05:33.698800+00:00,2026-09-30T12:05:33.755185+00:00,Win
+58,2026-02-11,9.0,Nottingham Forest,Win,Wolverhampton Wanderers,0.0,63.98,15.24,20.78,,,,Draw
+59,2026-02-10,18.0,Leeds United,Draw,Chelsea,5.0,31.44,30.99,37.57,,,,Draw
+60,2026-02-08,7.0,Liverpool,Draw,Manchester City,10.0,38.2,18.92,42.88,,,,Loss
+61,2026-02-08,15.0,Brighton and Hove Albion,Draw,Crystal Palace,17.0,34.73,22.98,42.29,,,,Loss
+62,2026-02-07,5.0,Chelsea,Win,Wolverhampton Wanderers,0.0,79.21,6.86,13.93,,,,Win
+63,2026-02-07,8.0,Fulham,Draw,Everton,14.0,23.7,21.49,54.81,,,,Loss
+64,2026-02-07,13.0,Manchester United,Win,Tottenham Hotspur,2.0,42.27,21.24,36.5,,,,Win
+65,2026-02-07,20.0,Nottingham Forest,Draw,Chelsea,5.0,21.51,34.2,44.3,,,,
+66,2026-02-07,6.0,West Ham United,Draw,Burnley,19.0,41.97,13.84,44.19,,,,Win
+67,2026-02-07,11.0,Brentford,Win,Newcastle United,1.0,58.06,17.65,24.28,,,,Win
+68,2026-02-07,4.0,Sunderland,Loss,Arsenal,3.0,23.11,43.43,33.46,,,,Loss
+69,2026-02-07,16.0,Bournemouth,Draw,Aston Villa,12.0,23.51,33.84,42.65,,,,Draw
+70,2025-10-20,16.0,Brentford,Win,West Ham United,19.0,50.96,19.73,29.32,,,,Win
+71,2025-10-19,2.0,Liverpool,Win,Manchester United,10.0,53.27,21.55,25.18,,,,Loss
+72,2025-10-19,3.0,Tottenham Hotspur,Loss,Aston Villa,13.0,27.07,41.26,31.68,,,,Loss
+73,2025-10-18,17.0,Nottingham Forest,Loss,Chelsea,7.0,33.48,40.59,25.92,,,,Loss
+74,2025-10-18,4.0,Bournemouth,Loss,Crystal Palace,6.0,24.84,46.68,28.48,,,,Draw
+75,2025-10-18,15.0,Leeds United,Win,Burnley,18.0,42.02,21.97,36.01,,,,Loss
+76,2025-10-18,9.0,Sunderland,Win,Wolverhampton Wanderers,20.0,39.88,22.18,37.94,,,,Win
+77,2025-10-18,5.0,Manchester City,Win,Everton,8.0,53.83,18.55,27.62,,,,Win
+78,2025-10-18,1.0,Arsenal,Win,Fulham,14.0,52.46,22.7,24.84,,,,Win
+79,2025-10-18,11.0,Newcastle United,Win,Brighton and Hove Albion,12.0,34.12,32.08,33.8,,,,Loss
+80,2025-10-05,13.0,Brentford,Loss,Manchester City,7.0,10.19,72.68,17.14,,,,Loss
+81,2025-10-05,17.0,Nottingham Forest,Draw,Newcastle United,15.0,26.84,31.21,41.95,,,,Loss
+82,2025-10-05,16.0,Aston Villa,Win,Burnley,18.0,50.38,26.2,23.42,,,,Win
+83,2025-10-05,10.0,Brighton and Hove Albion,Win,Wolverhampton Wanderers,20.0,51.44,22.46,26.11,,,,Draw
+84,2025-10-05,9.0,Everton,Win,Crystal Palace,3.0,41.39,39.43,19.19,,,,Win
+85,2025-10-04,14.0,Manchester United,Win,Sunderland,5.0,49.19,18.93,31.87,,,,Win
+86,2025-10-04,8.0,Chelsea,Loss,Liverpool,1.0,17.31,67.02,15.67,,,,Win
+87,2025-10-04,19.0,West Ham United,Loss,Arsenal,2.0,14.55,64.99,20.46,,,,Loss
+88,2025-10-04,4.0,Tottenham Hotspur,Win,Leeds United,12.0,38.82,35.93,25.25,,,,Win
+89,2025-10-03,6.0,Bournemouth,Win,Fulham,11.0,52.01,12.55,35.44,,,,Win
+90,2025-09-29,10.0,Everton,Win,West Ham United,19.0,41.39,19.0,39.61,,,,Draw
+91,2025-09-28,18.0,Aston Villa,Draw,Fulham,8.0,32.96,33.02,34.02,,,,Win
+92,2025-09-28,13.0,Newcastle United,Loss,Arsenal,2.0,16.46,42.19,41.35,,,,Loss
+93,2025-09-27,6.0,Chelsea,Win,Brighton and Hove Albion,14.0,49.46,14.14,36.4,,,,Loss
+94,2025-09-27,4.0,Bournemouth,Win,Leeds United,12.0,52.19,17.57,30.23,,,,Draw
+95,2025-09-27,1.0,Liverpool,Win,Crystal Palace,5.0,41.7,29.13,29.16,,,,Loss
+96,2025-09-27,3.0,Tottenham Hotspur,Win,Wolverhampton Wanderers,20.0,42.04,17.08,40.88,,,,Draw
+97,2025-09-27,7.0,Sunderland,Win,Nottingham Forest,15.0,34.34,32.68,32.98,,,,Win
+98,2025-09-27,11.0,Manchester United,Win,Brentford,17.0,39.14,25.63,35.23,,,,Loss
+99,2025-09-27,16.0,Burnley,Loss,Manchester City,9.0,6.84,73.05,20.12,,,,Loss
+100,2025-09-21,2.0,Arsenal,Win,Manchester City,8.0,49.4,23.41,27.19,,,,Draw
+101,2025-09-21,19.0,Aston Villa,Draw,Sunderland,7.0,32.78,33.31,33.91,,,,Draw
+102,2025-09-21,10.0,Newcastle United,Loss,Bournemouth,4.0,23.27,48.09,28.64,,,,Draw
+103,2025-09-20,17.0,Burnley,Draw,Nottingham Forest,15.0,23.84,35.96,40.2,,,,Draw
+104,2025-09-20,16.0,Leeds United,Loss,Wolverhampton Wanderers,20.0,30.2,43.73,26.07,,,,Win
+105,2025-09-20,11.0,Fulham,Draw,Brentford,12.0,30.99,26.76,42.24,,,,Win
+106,2025-09-20,6.0,Everton,Loss,Liverpool,1.0,16.25,55.95,27.8,,,,Loss
+107,2025-09-20,5.0,Chelsea,Win,Manchester United,14.0,39.61,27.99,32.4,,,,Loss
+108,2025-09-20,3.0,Tottenham Hotspur,Loss,Brighton and Hove Albion,13.0,28.35,42.49,29.16,,,,Draw
+109,2025-09-20,9.0,Crystal Palace,Win,West Ham United,18.0,50.25,18.2,31.54,,,,Win

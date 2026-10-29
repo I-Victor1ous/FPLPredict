@@ -14,7 +14,7 @@ def read_csv(filename: str) -> pd.DataFrame:
     path = data_path(filename)
     if not path.exists():
         raise FileNotFoundError(f"Missing data file: {path}")
-    return pd.read_csv(path, index_col=0)
+    return pd.read_csv(path, index_col=0, low_memory=False)
 
 
 def write_csv(df: pd.DataFrame, filename: str) -> Path:
