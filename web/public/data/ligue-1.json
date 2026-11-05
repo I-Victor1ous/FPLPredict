@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T16:47:00.707070+00:00",
+  "generatedAt": "2026-11-05T03:49:58.964022+00:00",
   "league": "Ligue 1",
   "upcoming": [
     {
@@ -156,52 +156,7 @@
       "correct": null
     }
   ],
-  "awaitingResult": [
-    {
-      "date": "2026-10-24",
-      "team": "Toulouse",
-      "opponent": "Troyes",
-      "pred": "Win",
-      "pickLabel": "Toulouse to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 7,
-      "oppPosition": 17,
-      "probs": {
-        "teamWin": 76.49,
-        "draw": 17.55,
-        "oppWin": 5.95
-      },
-      "correct": null,
-      "marketProbs": {
-        "teamWin": 58.65,
-        "draw": 22.58,
-        "oppWin": 18.76
-      }
-    },
-    {
-      "date": "2026-10-25",
-      "team": "Paris SG",
-      "opponent": "Lyon",
-      "pred": "Win",
-      "pickLabel": "Paris SG to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 2,
-      "oppPosition": 1,
-      "probs": {
-        "teamWin": 78.66,
-        "draw": 10.01,
-        "oppWin": 11.34
-      },
-      "correct": null,
-      "marketProbs": {
-        "teamWin": 65.62,
-        "draw": 19.0,
-        "oppWin": 15.38
-      }
-    }
-  ],
+  "awaitingResult": [],
   "history": [
     {
       "date": "2026-11-02",
@@ -359,28 +314,6 @@
     },
     {
       "date": "2026-10-30",
-      "team": "Paris SG",
-      "opponent": "Le Havre",
-      "pred": "Win",
-      "pickLabel": "Paris SG to win",
-      "actual": "Win",
-      "actualLabel": "Paris SG to win",
-      "teamPosition": 1,
-      "oppPosition": 18,
-      "probs": {
-        "teamWin": 90.84,
-        "draw": 6.51,
-        "oppWin": 2.66
-      },
-      "correct": true,
-      "marketProbs": {
-        "teamWin": 72.36,
-        "draw": 16.26,
-        "oppWin": 11.38
-      }
-    },
-    {
-      "date": "2026-10-30",
       "team": "Rennes",
       "opponent": "Nice",
       "pred": "Win",
@@ -402,47 +335,47 @@
       }
     },
     {
-      "date": "2026-10-25",
-      "team": "Le Havre",
-      "opponent": "Marseille",
-      "pred": "Loss",
-      "pickLabel": "Marseille to win",
-      "actual": "Loss",
-      "actualLabel": "Marseille to win",
-      "teamPosition": 18,
-      "oppPosition": 9,
+      "date": "2026-10-30",
+      "team": "Paris SG",
+      "opponent": "Le Havre",
+      "pred": "Win",
+      "pickLabel": "Paris SG to win",
+      "actual": "Win",
+      "actualLabel": "Paris SG to win",
+      "teamPosition": 1,
+      "oppPosition": 18,
       "probs": {
-        "teamWin": 17.42,
-        "draw": 16.97,
-        "oppWin": 65.6
+        "teamWin": 90.84,
+        "draw": 6.51,
+        "oppWin": 2.66
       },
       "correct": true,
       "marketProbs": {
-        "teamWin": 18.36,
-        "draw": 21.34,
-        "oppWin": 60.3
+        "teamWin": 72.36,
+        "draw": 16.26,
+        "oppWin": 11.38
       }
     },
     {
-      "date": "2026-10-25",
-      "team": "Lorient",
-      "opponent": "Angers",
+      "date": "2026-10-26",
+      "team": "Paris SG",
+      "opponent": "Lyon",
       "pred": "Win",
-      "pickLabel": "Lorient to win",
-      "actual": "Draw",
-      "actualLabel": "Draw",
-      "teamPosition": 7,
-      "oppPosition": 15,
+      "pickLabel": "Paris SG to win",
+      "actual": "Loss",
+      "actualLabel": "Lyon to win",
+      "teamPosition": 2,
+      "oppPosition": 1,
       "probs": {
-        "teamWin": 46.89,
-        "draw": 25.91,
-        "oppWin": 27.2
+        "teamWin": 78.66,
+        "draw": 10.01,
+        "oppWin": 11.34
       },
       "correct": false,
       "marketProbs": {
-        "teamWin": 38.7,
-        "draw": 28.55,
-        "oppWin": 32.75
+        "teamWin": 65.62,
+        "draw": 19.0,
+        "oppWin": 15.38
       }
     },
     {
@@ -534,6 +467,50 @@
       }
     },
     {
+      "date": "2026-10-25",
+      "team": "Le Havre",
+      "opponent": "Marseille",
+      "pred": "Loss",
+      "pickLabel": "Marseille to win",
+      "actual": "Loss",
+      "actualLabel": "Marseille to win",
+      "teamPosition": 18,
+      "oppPosition": 9,
+      "probs": {
+        "teamWin": 17.42,
+        "draw": 16.97,
+        "oppWin": 65.6
+      },
+      "correct": true,
+      "marketProbs": {
+        "teamWin": 18.36,
+        "draw": 21.34,
+        "oppWin": 60.3
+      }
+    },
+    {
+      "date": "2026-10-25",
+      "team": "Lorient",
+      "opponent": "Angers",
+      "pred": "Win",
+      "pickLabel": "Lorient to win",
+      "actual": "Draw",
+      "actualLabel": "Draw",
+      "teamPosition": 7,
+      "oppPosition": 15,
+      "probs": {
+        "teamWin": 46.89,
+        "draw": 25.91,
+        "oppWin": 27.2
+      },
+      "correct": false,
+      "marketProbs": {
+        "teamWin": 38.7,
+        "draw": 28.55,
+        "oppWin": 32.75
+      }
+    },
+    {
       "date": "2026-10-24",
       "team": "Paris FC",
       "opponent": "Lens",
@@ -601,28 +578,6 @@
     },
     {
       "date": "2026-10-18",
-      "team": "Lorient",
-      "opponent": "Monaco",
-      "pred": "Loss",
-      "pickLabel": "Monaco to win",
-      "actual": "Win",
-      "actualLabel": "Lorient to win",
-      "teamPosition": 12,
-      "oppPosition": 1,
-      "probs": {
-        "teamWin": 25.85,
-        "draw": 34.08,
-        "oppWin": 40.08
-      },
-      "correct": false,
-      "marketProbs": {
-        "teamWin": 26.88,
-        "draw": 27.04,
-        "oppWin": 46.08
-      }
-    },
-    {
-      "date": "2026-10-18",
       "team": "Paris FC",
       "opponent": "Rennes",
       "pred": "Win",
@@ -641,6 +596,28 @@
         "teamWin": 41.37,
         "draw": 26.72,
         "oppWin": 31.91
+      }
+    },
+    {
+      "date": "2026-10-18",
+      "team": "Le Havre",
+      "opponent": "Auxerre",
+      "pred": "Win",
+      "pickLabel": "Le Havre to win",
+      "actual": "Loss",
+      "actualLabel": "Auxerre to win",
+      "teamPosition": 18,
+      "oppPosition": 10,
+      "probs": {
+        "teamWin": 43.31,
+        "draw": 27.1,
+        "oppWin": 29.58
+      },
+      "correct": false,
+      "marketProbs": {
+        "teamWin": 41.05,
+        "draw": 27.86,
+        "oppWin": 31.09
       }
     },
     {
@@ -667,24 +644,24 @@
     },
     {
       "date": "2026-10-18",
-      "team": "Le Havre",
-      "opponent": "Auxerre",
-      "pred": "Win",
-      "pickLabel": "Le Havre to win",
-      "actual": "Loss",
-      "actualLabel": "Auxerre to win",
-      "teamPosition": 18,
-      "oppPosition": 10,
+      "team": "Lorient",
+      "opponent": "Monaco",
+      "pred": "Loss",
+      "pickLabel": "Monaco to win",
+      "actual": "Win",
+      "actualLabel": "Lorient to win",
+      "teamPosition": 12,
+      "oppPosition": 1,
       "probs": {
-        "teamWin": 43.31,
-        "draw": 27.1,
-        "oppWin": 29.58
+        "teamWin": 25.85,
+        "draw": 34.08,
+        "oppWin": 40.08
       },
       "correct": false,
       "marketProbs": {
-        "teamWin": 41.05,
-        "draw": 27.86,
-        "oppWin": 31.09
+        "teamWin": 26.88,
+        "draw": 27.04,
+        "oppWin": 46.08
       }
     },
     {
@@ -777,28 +754,6 @@
     },
     {
       "date": "2026-10-11",
-      "team": "Auxerre",
-      "opponent": "Rennes",
-      "pred": "Loss",
-      "pickLabel": "Rennes to win",
-      "actual": "Loss",
-      "actualLabel": "Rennes to win",
-      "teamPosition": 10,
-      "oppPosition": 5,
-      "probs": {
-        "teamWin": 15.34,
-        "draw": 30.12,
-        "oppWin": 54.53
-      },
-      "correct": true,
-      "marketProbs": {
-        "teamWin": 14.58,
-        "draw": 19.41,
-        "oppWin": 66.01
-      }
-    },
-    {
-      "date": "2026-10-11",
       "team": "Nice",
       "opponent": "Strasbourg",
       "pred": "Win",
@@ -839,6 +794,28 @@
         "teamWin": 49.82,
         "draw": 24.58,
         "oppWin": 25.59
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "team": "Auxerre",
+      "opponent": "Rennes",
+      "pred": "Loss",
+      "pickLabel": "Rennes to win",
+      "actual": "Loss",
+      "actualLabel": "Rennes to win",
+      "teamPosition": 10,
+      "oppPosition": 5,
+      "probs": {
+        "teamWin": 15.34,
+        "draw": 30.12,
+        "oppWin": 54.53
+      },
+      "correct": true,
+      "marketProbs": {
+        "teamWin": 14.58,
+        "draw": 19.41,
+        "oppWin": 66.01
       }
     },
     {
@@ -975,31 +952,31 @@
     }
   ],
   "metrics": {
-    "n": 35,
-    "accuracy": 0.5714,
-    "ci95Low": 0.4086,
-    "ci95High": 0.7202
+    "n": 36,
+    "accuracy": 0.5556,
+    "ci95Low": 0.3958,
+    "ci95High": 0.7046
   },
   "confidenceTiers": [
     {
       "minTopProb": 50.0,
-      "n": 17,
-      "accuracy": 0.7059
+      "n": 18,
+      "accuracy": 0.6667
     },
     {
       "minTopProb": 55.0,
-      "n": 14,
-      "accuracy": 0.7857
+      "n": 15,
+      "accuracy": 0.7333
     },
     {
       "minTopProb": 60.0,
-      "n": 9,
-      "accuracy": 0.7778
+      "n": 10,
+      "accuracy": 0.7
     },
     {
       "minTopProb": 65.0,
-      "n": 6,
-      "accuracy": 0.8333
+      "n": 7,
+      "accuracy": 0.7143
     }
   ],
   "weeklyPerformance": [
@@ -1027,9 +1004,9 @@
       "gameweek": "Matchweek 8",
       "weekStart": "2026-10-23",
       "seasonEnd": 2027,
-      "n": 8,
+      "n": 9,
       "correct": 3,
-      "accuracy": 0.375,
+      "accuracy": 0.3333,
       "modelStrategy": "soft_vote_val_log_loss",
       "modelLabel": "Validation-tuned soft vote"
     },
@@ -1118,16 +1095,16 @@
     },
     "liveMetrics": {
       "seasonEnd": 2027,
-      "n": 49,
-      "accuracy": 0.5510204081632653,
-      "log_loss": 0.9569486603222883,
-      "rps": 0.20255378116444062,
+      "n": 50,
+      "accuracy": 0.54,
+      "log_loss": 0.981348364769619,
+      "rps": 0.21254966050968854,
       "market_baseline": {
-        "n": 23,
-        "coverage": 0.4694,
-        "accuracy": 0.5652173913043478,
-        "log_loss": 0.9311677965382508,
-        "rps": 0.1910801561988865
+        "n": 24,
+        "coverage": 0.48,
+        "accuracy": 0.5416666666666666,
+        "log_loss": 0.9703644345409236,
+        "rps": 0.20700622088740483
       }
     },
     "rollingBacktest": [
@@ -1173,52 +1150,6 @@
       "topProb": 85.76
     },
     {
-      "date": "2026-10-25",
-      "team": "Paris SG",
-      "opponent": "Lyon",
-      "pred": "Win",
-      "pickLabel": "Paris SG to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 2,
-      "oppPosition": 1,
-      "probs": {
-        "teamWin": 78.66,
-        "draw": 10.01,
-        "oppWin": 11.34
-      },
-      "correct": null,
-      "marketProbs": {
-        "teamWin": 65.62,
-        "draw": 19.0,
-        "oppWin": 15.38
-      },
-      "topProb": 78.66
-    },
-    {
-      "date": "2026-10-24",
-      "team": "Toulouse",
-      "opponent": "Troyes",
-      "pred": "Win",
-      "pickLabel": "Toulouse to win",
-      "actual": null,
-      "actualLabel": null,
-      "teamPosition": 7,
-      "oppPosition": 17,
-      "probs": {
-        "teamWin": 76.49,
-        "draw": 17.55,
-        "oppWin": 5.95
-      },
-      "correct": null,
-      "marketProbs": {
-        "teamWin": 58.65,
-        "draw": 22.58,
-        "oppWin": 18.76
-      },
-      "topProb": 76.49
-    },
-    {
       "date": "2026-11-08",
       "team": "Le Mans",
       "opponent": "Monaco",
@@ -1239,8 +1170,8 @@
   ],
   "meta": {
     "upcomingCount": 9,
-    "awaitingResultCount": 2,
-    "historyCount": 35,
+    "awaitingResultCount": 0,
+    "historyCount": 36,
     "recentPreviewSize": 10,
     "historyPageSize": 20,
     "selectedModel": "soft_vote_val_log_loss",
