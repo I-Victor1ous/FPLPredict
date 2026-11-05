@@ -1,3 +1,4 @@
+import { MarketCompare } from "@/components/MarketCompare";
 import { formatDate, formatPosition, pickClass } from "@/lib/format";
 import type { Fixture } from "@/lib/types";
 
@@ -37,14 +38,18 @@ function ProbBars({
 
 type Props = {
   item: Fixture;
+  awaiting?: boolean;
 };
 
-export function FixtureCard({ item }: Props) {
+export function FixtureCard({ item, awaiting = false }: Props) {
   const pickRaw = item.pickLabel ?? item.pred ?? "";
 
   return (
-    <article className="card">
-      <div className="card-date">{formatDate(item.date)}</div>
+    <article className={awaiting ? "card awaiting" : "card"}>
+      <div className="card-date">
+        {formatDate(item.date)}
+        {awaiting ? <span className="awaiting-badge">Awaiting result</span> : null}
+      </div>
       <div className="matchup">
         <div className="team-block">
           <div className="team-name">{item.team}</div>
@@ -58,6 +63,12 @@ export function FixtureCard({ item }: Props) {
       </div>
       <span className={`pred-badge ${pickClass(pickRaw)}`}>{pickRaw}</span>
       <ProbBars probs={item.probs} team={item.team} opponent={item.opponent} />
+      <MarketCompare
+        model={item.probs}
+        market={item.marketProbs}
+        team={item.team}
+        opponent={item.opponent}
+      />
     </article>
   );
 }

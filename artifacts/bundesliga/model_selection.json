@@ -1,10 +1,15 @@
 {
   "league": "Bundesliga",
-  "selected_model": "soft_vote_val_log_loss",
-  "best_accuracy": 0.5909090909090909,
-  "evaluated_at": "2026-09-27T16:22:41.142774+00:00",
+  "selected_model": "lr",
+  "best_accuracy": 0.5238095238095238,
+  "evaluated_at": "2026-10-18T04:21:24.582463+00:00",
+  "fitted_at": "2026-10-28T15:51:44.090817+00:00",
+  "selection_note": "Strategy chosen on walk-forward pooled log loss across full prior test seasons (then accuracy); soft-vote weights tuned on the current validation season. Reported test metrics are for the held-out test season (completed matches only). The winning strategy is re-compared about monthly; production weights are refit on the latest scraped data every weekly run. Test-season metrics refresh weekly from the same strategy refit on the seasons before the test season, so they stay out-of-sample.",
+  "best_val_log_loss": 0.9358345238382716,
   "split": {
     "data_seasons": [
+      2021,
+      2022,
       2023,
       2024,
       2025,
@@ -12,6 +17,8 @@
       2027
     ],
     "train_seasons": [
+      2021,
+      2022,
       2023,
       2024,
       2025
@@ -19,61 +26,370 @@
     "val_season": 2026,
     "test_season": 2027
   },
-  "scores": [
+  "val_scores": [
     {
       "model": "rf",
-      "accuracy": 0.4772727272727273,
-      "log_loss": 1.031811499926058
+      "accuracy": 0.5882352941176471,
+      "log_loss": 0.9725428121937103,
+      "rps": 0.19727078378450083,
+      "n": 306
     },
     {
       "model": "xgb",
-      "accuracy": 0.45454545454545453,
-      "log_loss": 1.034061448833016
+      "accuracy": 0.5424836601307189,
+      "log_loss": 1.01201100715358,
+      "rps": 0.2026091367006302,
+      "n": 306
+    },
+    {
+      "model": "hgb",
+      "accuracy": 0.5098039215686274,
+      "log_loss": 1.2497027607392734,
+      "rps": 0.2314057076568757,
+      "n": 306
     },
     {
       "model": "svc",
-      "accuracy": 0.5454545454545454,
-      "log_loss": 1.0313882611193048
+      "accuracy": 0.5784313725490197,
+      "log_loss": 0.9616248011740209,
+      "rps": 0.19291300352978288,
+      "n": 306
     },
     {
       "model": "lr",
-      "accuracy": 0.5227272727272727,
-      "log_loss": 1.1203239957237643
+      "accuracy": 0.5816993464052288,
+      "log_loss": 0.9394921552677883,
+      "rps": 0.18637373433215315,
+      "n": 306
     },
     {
       "model": "soft_vote_fixed_4_4_1_1",
-      "accuracy": 0.5909090909090909,
-      "log_loss": 1.0084601076745505
+      "accuracy": 0.5718954248366013,
+      "log_loss": 0.9649911332335949,
+      "rps": 0.19431097096144936,
+      "n": 306
     },
     {
       "model": "soft_vote_val_log_loss",
-      "accuracy": 0.5909090909090909,
-      "log_loss": 1.0038984499863142
+      "accuracy": 0.5620915032679739,
+      "log_loss": 0.9358345238382716,
+      "rps": 0.18605706451158185,
+      "n": 306
     },
     {
       "model": "soft_vote_val_accuracy",
-      "accuracy": 0.5909090909090909,
-      "log_loss": 1.010567735961607
+      "accuracy": 0.5751633986928104,
+      "log_loss": 0.9558386273044169,
+      "rps": 0.19195274291804504,
+      "n": 306
     },
     {
       "model": "stacking_lr_meta_oof",
-      "accuracy": 0.5227272727272727,
-      "log_loss": 0.9775581309506133
+      "accuracy": 0.5784313725490197,
+      "log_loss": 0.9531749217627792,
+      "rps": 0.1884884807367489,
+      "n": 306
     }
   ],
+  "scores": [
+    {
+      "model": "rf",
+      "accuracy": 0.5,
+      "log_loss": 1.0002014700811899,
+      "rps": 0.2123131768990765,
+      "n": 46
+    },
+    {
+      "model": "xgb",
+      "accuracy": 0.5217391304347826,
+      "log_loss": 1.0162025672530317,
+      "rps": 0.20781226456165314,
+      "n": 46
+    },
+    {
+      "model": "hgb",
+      "accuracy": 0.4782608695652174,
+      "log_loss": 1.2418338676056278,
+      "rps": 0.21589302401954188,
+      "n": 46
+    },
+    {
+      "model": "svc",
+      "accuracy": 0.5217391304347826,
+      "log_loss": 1.0839123743236463,
+      "rps": 0.23310116009078413,
+      "n": 46
+    },
+    {
+      "model": "lr",
+      "accuracy": 0.5,
+      "log_loss": 1.0946323032570715,
+      "rps": 0.2247514681131705,
+      "n": 46
+    },
+    {
+      "model": "soft_vote_fixed_4_4_1_1",
+      "accuracy": 0.5434782608695652,
+      "log_loss": 0.9855502070917892,
+      "rps": 0.20482816145037078,
+      "n": 46
+    },
+    {
+      "model": "soft_vote_val_log_loss",
+      "accuracy": 0.5217391304347826,
+      "log_loss": 1.0039387071249541,
+      "rps": 0.21633081554201214,
+      "n": 46
+    },
+    {
+      "model": "soft_vote_val_accuracy",
+      "accuracy": 0.5217391304347826,
+      "log_loss": 0.9841524677770523,
+      "rps": 0.20446511318182486,
+      "n": 46
+    },
+    {
+      "model": "stacking_lr_meta_oof",
+      "accuracy": 0.5,
+      "log_loss": 1.0103718389320562,
+      "rps": 0.22128834183464766,
+      "n": 46
+    }
+  ],
+  "test_metrics": {
+    "model": "lr",
+    "accuracy": 0.5238095238095238,
+    "log_loss": 1.1427536879680629,
+    "rps": 0.232737291405334,
+    "n": 63,
+    "home_win_baseline_accuracy": 0.4126984126984127,
+    "brier": 0.6360685353091299,
+    "calibration": [
+      {
+        "low": 0.0,
+        "high": 0.4,
+        "n": 9,
+        "meanPredicted": 0.3763,
+        "observed": 0.3333
+      },
+      {
+        "low": 0.4,
+        "high": 0.5,
+        "n": 9,
+        "meanPredicted": 0.4456,
+        "observed": 0.5556
+      },
+      {
+        "low": 0.5,
+        "high": 0.6,
+        "n": 15,
+        "meanPredicted": 0.5544,
+        "observed": 0.5333
+      },
+      {
+        "low": 0.6,
+        "high": 0.7,
+        "n": 18,
+        "meanPredicted": 0.6586,
+        "observed": 0.5
+      },
+      {
+        "low": 0.7,
+        "high": 1.0,
+        "n": 12,
+        "meanPredicted": 0.8171,
+        "observed": 0.6667
+      }
+    ],
+    "market_baseline": {
+      "test_n": 63,
+      "n": 63,
+      "coverage": 1.0,
+      "accuracy": 0.5555555555555556,
+      "log_loss": 0.9893766044997662,
+      "rps": 0.2130335878942784,
+      "model_accuracy": 0.5238095238095238,
+      "model_log_loss": 1.1427536879680629,
+      "model_rps": 0.232737291405334
+    }
+  },
   "tuned_weights": {
     "soft_vote_val_log_loss": [
       0.0,
-      0.15882998403952428,
-      0.7658353756707732,
-      0.07533464028970244
+      0.0,
+      0.11771397245528892,
+      0.0,
+      0.882286027544711
     ],
     "soft_vote_val_accuracy": [
-      0.25,
-      0.25,
-      0.25,
-      0.25
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ]
   },
-  "reselect_days": 30
+  "reselect_days": 30,
+  "selected_features": [
+    "Predicted_team_win",
+    "Relative_rolling_rests_3",
+    "Opp_xGlast_rolling",
+    "Relative_defense_strength",
+    "Relative_leaguenum_wins_rolling",
+    "Opp_CrdRleague_rolling",
+    "Relative_ratings",
+    "Relative_attack_strength",
+    "xGAleague_rolling",
+    "Predicted_team_loss"
+  ],
+  "feature_selection": [
+    {
+      "feature": "Predicted_team_win",
+      "val_log_loss": 0.97198
+    },
+    {
+      "feature": "Relative_rolling_rests_3",
+      "val_log_loss": 0.96277
+    },
+    {
+      "feature": "Opp_xGlast_rolling",
+      "val_log_loss": 0.95875
+    },
+    {
+      "feature": "Relative_defense_strength",
+      "val_log_loss": 0.95478
+    },
+    {
+      "feature": "Relative_leaguenum_wins_rolling",
+      "val_log_loss": 0.95185
+    },
+    {
+      "feature": "Opp_CrdRleague_rolling",
+      "val_log_loss": 0.94845
+    },
+    {
+      "feature": "Relative_ratings",
+      "val_log_loss": 0.94626
+    },
+    {
+      "feature": "Relative_attack_strength",
+      "val_log_loss": 0.94293
+    },
+    {
+      "feature": "xGAleague_rolling",
+      "val_log_loss": 0.94082
+    },
+    {
+      "feature": "Predicted_team_loss",
+      "val_log_loss": 0.93948
+    }
+  ],
+  "selection_criterion": "walkforward_log_loss",
+  "walkforward_scores": [
+    {
+      "model": "rf",
+      "log_loss": 1.007585827592147,
+      "accuracy": 0.5228758169934641,
+      "rps": 0.20701417590873072,
+      "n": 612,
+      "folds": 2
+    },
+    {
+      "model": "xgb",
+      "log_loss": 1.0322500906296042,
+      "accuracy": 0.5,
+      "rps": 0.21259122341871262,
+      "n": 612,
+      "folds": 2
+    },
+    {
+      "model": "hgb",
+      "log_loss": 1.4260312202818413,
+      "accuracy": 0.4787581699346405,
+      "rps": 0.25764126751125777,
+      "n": 612,
+      "folds": 2
+    },
+    {
+      "model": "svc",
+      "log_loss": 0.9894494420364546,
+      "accuracy": 0.5294117647058824,
+      "rps": 0.2018694655052502,
+      "n": 612,
+      "folds": 2
+    },
+    {
+      "model": "lr",
+      "log_loss": 0.9835839555124894,
+      "accuracy": 0.5261437908496732,
+      "rps": 0.19930001159469768,
+      "n": 612,
+      "folds": 2
+    },
+    {
+      "model": "soft_vote_fixed_4_4_1_1",
+      "log_loss": 0.997874578553237,
+      "accuracy": 0.5163398692810457,
+      "rps": 0.20475764801163793,
+      "n": 612,
+      "folds": 2
+    },
+    {
+      "model": "soft_vote_val_log_loss",
+      "log_loss": 0.9868741788974824,
+      "accuracy": 0.5277777777777778,
+      "rps": 0.2017655615008233,
+      "n": 612,
+      "folds": 2
+    },
+    {
+      "model": "soft_vote_val_accuracy",
+      "log_loss": 0.992437448806573,
+      "accuracy": 0.5277777777777777,
+      "rps": 0.20315876452118897,
+      "n": 612,
+      "folds": 2
+    },
+    {
+      "model": "stacking_lr_meta_oof",
+      "log_loss": 0.9918809232365078,
+      "accuracy": 0.5228758169934641,
+      "rps": 0.20074686038296563,
+      "n": 612,
+      "folds": 2
+    }
+  ],
+  "walkforward_folds": [
+    {
+      "testSeason": 2025,
+      "n": 306,
+      "trainSeasons": [
+        2021,
+        2022,
+        2023
+      ],
+      "valSeason": 2024
+    },
+    {
+      "testSeason": 2026,
+      "n": 306,
+      "trainSeasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "valSeason": 2025
+    }
+  ],
+  "draw_class_weight": {
+    "0": 1.0,
+    "1": 1.0,
+    "2": 1.0
+  },
+  "decision_thresholds": {
+    "t_draw": 0.2
+  },
+  "calibration": {
+    "temperature": 1.0
+  }
 }

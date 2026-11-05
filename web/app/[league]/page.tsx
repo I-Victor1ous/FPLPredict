@@ -4,9 +4,17 @@ import { notFound } from "next/navigation";
 import { FixtureCard } from "@/components/FixtureCard";
 import { HistoryArchive } from "@/components/HistoryArchive";
 import { HistoryTable } from "@/components/HistoryTable";
+import { LeagueSubnav } from "@/components/LeagueSubnav";
 import { SiteHeader } from "@/components/SiteHeader";
-import { getLeagueData, getManifest, isKnownSlug } from "@/lib/data";
-import { sortHistory, sortUpcoming, upcomingItems } from "@/lib/fixtures";
+import { getLeagueData, getManifest, getPipelineStatus, isKnownSlug } from "@/lib/data";
+import { formatDataAsOf } from "@/lib/format";
+import {
+  awaitingItems,
+  excludeScoredFixtures,
+  sortHistory,
+  sortUpcoming,
+  upcomingItems,
+} from "@/lib/fixtures";
 
 const RECENT_LIMIT = 10;
 
@@ -34,8 +42,12 @@ export default async function LeaguePage({ params }: PageProps) {
     notFound();
   }
 
-  const data = await getLeagueData(slug);
+  const [data, pipelineStatus] = await Promise.all([
+    getLeagueData(slug),
+    getPipelineStatus(),
+  ]);
   const leagueEntry = manifest.leagues.find((l) => l.slug === slug)!;
+  const leagueHealth = pipelineStatus?.leagues.find((l) => l.slug === slug);
   const displayLeague = data?.league ?? leagueEntry.name;
 
   if (!data) {
@@ -52,8 +64,16 @@ export default async function LeaguePage({ params }: PageProps) {
     );
   }
 
+  const dataAsOf =
+    formatDataAsOf(leagueHealth?.newestCompletedDate) ??
+    formatDataAsOf(pipelineStatus?.runAt) ??
+    formatDataAsOf(data.generatedAt);
+
   const history = sortHistory(data.history ?? []);
-  const upcoming = sortUpcoming(upcomingItems(data.upcoming));
+  const upcoming = sortUpcoming(
+    excludeScoredFixtures(upcomingItems(data.upcoming), history)
+  );
+  const awaiting = sortUpcoming(awaitingItems(data, history));
 
   return (
     <>
@@ -74,12 +94,31 @@ export default async function LeaguePage({ params }: PageProps) {
           {data.meta?.positionsNote ? (
             <p className="hero-sub positions-note">{data.meta.positionsNote}</p>
           ) : null}
+          <p className="hero-sub weekly-update-note">
+            Match results and table positions are updated weekly after the automated
+            scrape.
+            {dataAsOf ? <> Data as of {dataAsOf}.</> : null}
+          </p>
+          {leagueHealth?.status === "failed" ? (
+            <p className="hero-sub pipeline-warning" role="status">
+              The last weekly pipeline run did not finish predictions for this league.
+              {leagueHealth.error ? ` (${leagueHealth.error})` : null}
+            </p>
+          ) : null}
+          <LeagueSubnav slug={slug} />
         </section>
 
         <HistoryArchive history={history} metrics={data.metrics} />
 
         <section className="fixture-grid">
-          {upcoming.length === 0 ? (
+          {awaiting.map((item) => (
+            <FixtureCard
+              key={`awaiting-${item.date}-${item.team}-${item.opponent}`}
+              item={item}
+              awaiting
+            />
+          ))}
+          {upcoming.length === 0 && awaiting.length === 0 ? (
             <p className="empty">No upcoming fixtures for {displayLeague}.</p>
           ) : (
             upcoming.map((item) => (

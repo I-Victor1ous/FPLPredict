@@ -1,4 +1,5 @@
 import { LeagueSwitcher } from "@/components/LeagueSwitcher";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import type { LeagueEntry, LeagueMeta } from "@/lib/types";
 
 type Props = {
@@ -20,11 +21,12 @@ export function SiteHeader({ leagues, leagueName, meta, generatedAt }: Props) {
         <div className="brand">
           <span className="brand-mark">FP</span>
           <div>
-            <h1>FPLPredict</h1>
+            <h1>Football Predict</h1>
             <p className="tagline">{tagline}</p>
           </div>
         </div>
         <div className="header-actions">
+          <ThemeToggle />
           <LeagueSwitcher leagues={leagues} />
           <p className="updated">{updated}</p>
         </div>

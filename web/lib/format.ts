@@ -39,3 +39,16 @@ export function topProb(
   entries.sort((a, b) => b[1] - a[1]);
   return entries[0];
 }
+
+/** Display date like "20 Sep 2026" from an ISO timestamp or YYYY-MM-DD. */
+export function formatDataAsOf(iso: string | null | undefined): string | null {
+  if (!iso) return null;
+  const d = new Date(iso.length <= 10 ? `${iso}T12:00:00Z` : iso);
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}

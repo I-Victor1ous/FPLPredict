@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 
-import type { LeagueData, Manifest } from "@/lib/types";
+import type { LeagueData, Manifest, PipelineStatus } from "@/lib/types";
 
 const DATA_DIR = path.join(process.cwd(), "public", "data");
 
@@ -22,6 +22,16 @@ export async function getLeagueData(slug: string): Promise<LeagueData | null> {
 
 export function isKnownSlug(manifest: Manifest, slug: string): boolean {
   return manifest.leagues.some((l) => l.slug === slug);
+}
+
+export async function getPipelineStatus(): Promise<PipelineStatus | null> {
+  const file = path.join(DATA_DIR, "pipeline_status.json");
+  try {
+    const raw = await fs.readFile(file, "utf-8");
+    return JSON.parse(raw) as PipelineStatus;
+  } catch {
+    return null;
+  }
 }
 
 export function defaultSlug(manifest: Manifest): string {

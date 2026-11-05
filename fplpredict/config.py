@@ -1,21 +1,43 @@
-import json
 import os
-from pathlib import Path
-
-from fplpredict.paths import PROJECT_ROOT
+from datetime import date
 
 LEAGUE = os.environ.get("FPL_LEAGUE", "Premier League")
 
-# Modeling uses the last N seasons; train / val / test = 3 / 1 / 1 full seasons.
-MODEL_DATA_SEASONS = int(os.environ.get("FPL_MODEL_DATA_SEASONS", "5"))
-TRAIN_SEASON_COUNT = int(os.environ.get("FPL_TRAIN_SEASONS", "3"))
+# Modeling uses the last N seasons; train / val / test = 5 / 1 / 1 full seasons.
+MODEL_DATA_SEASONS = int(os.environ.get("FPL_MODEL_DATA_SEASONS", "7"))
+TRAIN_SEASON_COUNT = int(os.environ.get("FPL_TRAIN_SEASONS", "5"))
 VAL_SEASON_COUNT = int(os.environ.get("FPL_VAL_SEASONS", "1"))
 TEST_SEASON_COUNT = int(os.environ.get("FPL_TEST_SEASONS", "1"))
 
+# Walk-forward folds: prior seasons used per test year (last season in window = val).
+WF_TRAIN_WINDOW_SEASONS = int(os.environ.get("FPL_WF_TRAIN_SEASONS", "4"))
+# Minimum completed rows in a season to use it as a walk-forward test fold.
+WF_MIN_TEST_ROWS = int(os.environ.get("FPL_WF_MIN_TEST_ROWS", "100"))
+# Strategies within this log-loss band of the best are treated as tied (accuracy wins).
+WF_LOG_LOSS_TIE_EPS = float(os.environ.get("FPL_WF_LOG_LOSS_TIE_EPS", "0.005"))
+
 # FBref scrape depth (season pages to walk back); defaults to modeling window.
-YEAR_DIFF = int(os.environ.get("FPL_YEAR_DIFF", str(MODEL_DATA_SEASONS)))
+YEAR_DIFF = int(os.environ.get("FPL_YEAR_DIFF", 7))
 
 MODEL_RESELECT_DAYS = int(os.environ.get("FPL_MODEL_RESELECT_DAYS", "30"))
+
+# European seasons roll over on 1 July (FBref season ids are end-years).
+SEASON_ROLLOVER_MONTH = 7
+
+
+def current_season_end(today: date | None = None) -> int:
+    """FBref end-year of the season in progress (2027 = 2026-27)."""
+    today = today or date.today()
+    return today.year + 1 if today.month >= SEASON_ROLLOVER_MONTH else today.year
+
+
+def model_season_window(today: date | None = None) -> list[int]:
+    """End-years of the last ``MODEL_DATA_SEASONS`` seasons, oldest first."""
+    end = current_season_end(today)
+    return list(range(end - MODEL_DATA_SEASONS + 1, end + 1))
+
+# Rolling form windows (league / H2H stats; ``last`` windows stay at 1 match).
+ROLLING_FORM_WINDOW = int(os.environ.get("FPL_ROLLING_FORM_WINDOW", "5"))
 
 LEAGUE_INFO_URLS = {
     "Premier League": "https://fbref.com/en/comps/9/Premier-League-Stats",
@@ -24,13 +46,6 @@ LEAGUE_INFO_URLS = {
     "Serie A": "https://fbref.com/en/comps/11/Serie-A-Stats",
     "Ligue 1": "https://fbref.com/en/comps/13/Ligue-1-Stats",
 }
-
-
-def league_slug(league_name: str) -> str:
-    import re
-
-    slug = re.sub(r"[^a-z0-9]+", "-", league_name.lower()).strip("-")
-    return slug or "league"
 
 
 def active_leagues() -> list[str]:
@@ -47,33 +62,62 @@ def active_leagues() -> list[str]:
         return names
     return list(LEAGUE_INFO_URLS.keys())
 
-# Selected via notebook permutation importance (top 13).
+# Features available from FBref + football-data xG (dead Opta-only columns removed).
 MODEL_FEATURES = [
+    "is_home",
     "Relative_ratings",
-    "TklWlast_rolling",
-    "xGhth_rolling",
     "Relative_pos",
-    "Opp_Distleague_rolling",
+    "Relative_rolling_rests_1",
+    "Relative_xGleague_rolling",
+    "Relative_xGAleague_rolling",
     "GFhth_rolling",
-    "Opp_Fldlast_rolling",
-    "Opp_rolling_rests_1",
-    "xGAleague_rolling",
-    "Relative_Fldlast_rolling",
-    "Relative_Intleague_rolling",
-    "Relative_GCAleague_rolling",
-    "Relative_Intlast_rolling",
+    "Relative_attack_strength",
+    "Predicted_team_win",
+    "Shlast_rolling",
+    "SoTlast_rolling",
 ]
 
+_ROLLING_STATS = ["GF", "GA", "Sh", "SoT", "CrdY", "CrdR", "xG", "xGA"]
+
+# Pool for monthly forward selection: pre-match values only (no possession, IDs, or result).
+CANDIDATE_FEATURES = list(
+    dict.fromkeys(
+        MODEL_FEATURES
+        + [
+            "is_home",
+            "Team_position",
+            "Opp_position",
+            "Relative_pos",
+            "Relative_ratings",
+            "Relative_attack_strength",
+            "Relative_defense_strength",
+            "Expected_goal_team",
+            "Expected_goal_opp",
+            "Predicted_team_win",
+            "Predicted_team_draw",
+            "Predicted_team_loss",
+            "rolling_rests_1",
+            "rolling_rests_3",
+            "Opp_rolling_rests_1",
+            "Opp_rolling_rests_3",
+            "Relative_rolling_rests_1",
+            "Relative_rolling_rests_3",
+            "leaguenum_wins_rolling",
+            "Opp_leaguenum_wins_rolling",
+            "Relative_leaguenum_wins_rolling",
+            "GFhth_rolling",
+            "GAhth_rolling",
+            "hthnum_wins_rolling",
+        ]
+        + [f"{s}league_rolling" for s in _ROLLING_STATS]
+        + [f"Opp_{s}league_rolling" for s in _ROLLING_STATS]
+        + [f"Relative_{s}league_rolling" for s in _ROLLING_STATS]
+        + [f"{s}last_rolling" for s in _ROLLING_STATS + ["Target"]]
+        + [f"Opp_{s}last_rolling" for s in _ROLLING_STATS + ["Target"]]
+        + [f"Relative_{s}last_rolling" for s in _ROLLING_STATS + ["Target"]]
+    )
+)
+FEATURE_SELECTION_MAX = int(os.environ.get("FPL_FEATURE_SELECTION_MAX", "15"))
+FEATURE_SELECTION_MIN_GAIN = float(os.environ.get("FPL_FEATURE_SELECTION_MIN_GAIN", "0.001"))
+
 RESULT_LABELS = {0: "Draw", 1: "Loss", 2: "Win"}
-
-
-def load_api_key() -> str | None:
-    env_key = os.environ.get("FBRAPI_KEY")
-    if env_key:
-        return env_key
-    config_path = PROJECT_ROOT / "config.json"
-    if not config_path.exists():
-        return None
-    with config_path.open() as handle:
-        data = json.load(handle)
-    return data.get("API_key")

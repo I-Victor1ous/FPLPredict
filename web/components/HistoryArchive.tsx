@@ -47,7 +47,19 @@ export function HistoryArchive({ history, metrics }: Props) {
             <span className="metric-label">Track record</span>
             <span className="metric-values">
               <strong>{metrics.n}</strong> scored ·{" "}
-              <strong>{(metrics.accuracy * 100).toFixed(1)}%</strong> accuracy
+              <strong>
+                {metrics.accuracy != null
+                  ? `${(metrics.accuracy * 100).toFixed(1)}%`
+                  : "—"}
+              </strong>{" "}
+              accuracy
+              {metrics.ci95Low != null && metrics.ci95High != null ? (
+                <>
+                  {" "}
+                  (95% CI {(metrics.ci95Low * 100).toFixed(0)}–
+                  {(metrics.ci95High * 100).toFixed(0)}%)
+                </>
+              ) : null}
             </span>
             <span className="metric-cta">View all →</span>
           </button>

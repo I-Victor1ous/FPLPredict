@@ -1,15 +1,14 @@
 [
+  "Predicted_team_loss",
   "Relative_ratings",
-  "TklWlast_rolling",
-  "xGhth_rolling",
-  "Relative_pos",
-  "Opp_Distleague_rolling",
+  "is_home",
+  "Relative_Shleague_rolling",
   "GFhth_rolling",
-  "Opp_Fldlast_rolling",
-  "Opp_rolling_rests_1",
-  "xGAleague_rolling",
-  "Relative_Fldlast_rolling",
-  "Relative_Intleague_rolling",
-  "Relative_GCAleague_rolling",
-  "Relative_Intlast_rolling"
+  "xGleague_rolling",
+  "Relative_GFleague_rolling",
+  "Relative_SoTleague_rolling",
+  "Relative_rolling_rests_3",
+  "CrdRleague_rolling",
+  "Opp_CrdYleague_rolling",
+  "Predicted_team_win"
 ]
